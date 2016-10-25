@@ -152,15 +152,7 @@ man() {
       man "$@"
 }
 
-export NGROK_AUTH="39Ap61QsdkPRJwUAiCiUx_5JUSDviycNHGnihDhV4gx"
-export NGROK_SUBDOMAIN="mirage"
-
 alias open="xdg-open"
-
-source /etc/profile.d/vte.sh
-
-# bspwm FIFO
-export PANEL_FIFO="/tmp/panel_fifo"
 
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
