@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+# Put this on your path or in <app>/bin/m and then execute individual tests
+# with `bin/m path/to/test`
+
+$LOAD_PATH.unshift('lib', 'spec', 'test')
+
+ARGV.each do |path|
+  if File.directory?(path)
+    dir = path.gsub(/\/+\Z/, '')
+    Dir.glob("#{dir}/**/*_{spec,test}.rb").each { |f| load(f) }
+  else
+    load(path)
+  end
+end

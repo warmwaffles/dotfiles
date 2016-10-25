@@ -1,0 +1,11 @@
+[options]
+font = Monospace = 14
+font = Terminus (TTF) 14
+font = Droid Sans Mono 14
+
+scrollback_lines = 50000
+browser = xdg-open
+
+[colors]
+foreground = #dcdccc
+background  = #222222

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+echo "==> Nuking docker..."
+
+echo "==> Stopping containers..."
+docker stop $(docker ps -a -q)
+
+echo "==> Removing containers..."
+docker rm -f $(docker ps -a -q)
+
+echo "==> Removing unnamed containers..."
+docker images | grep "<none>" | awk '{ print "docker rmi " $3 }' | bash
+
+echo "==> Complete"

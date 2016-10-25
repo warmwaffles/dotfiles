@@ -1,0 +1,49 @@
+[user]
+  name = Matthew Johnston
+  email = warmwaffles@gmail.com
+  signingkey = B7837808
+[ui]
+  color = true
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+[color]
+  ui = true
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = green
+  changed = red
+  untracked = cyan bold
+[alias]
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit --date=relative
+  inthere  = commit --amend --no-edit
+  g = grep --break --heading --line-number
+  fuckit = commit --all -m 'zero fucks given'
+  out = reset HEAD
+  back = reset HEAD^
+  save = commit -m 'saving'
+  ignored = ls-files --others -i --exclude-standard
+  cp = cherry-pick
+  dic = diff --cached
+  last = log -n 1
+  tags = tag -l --sort=version:refname --format='%(color:green)%(refname:strip=2)%(color:reset) %(color:yellow)%(objecttype)%(color:reset) %(color:blue)%(objectname:short)%(color:reset) %(creatordate)'
+[github]
+  user = warmwaffles
+[diff]
+  algorithm = patience
+[push]
+  default = current
+[apply]
+  whitespace = fix
+[fetch]
+  prune = true
+[merge]
+  ff = always

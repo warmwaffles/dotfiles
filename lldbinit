@@ -1,0 +1,10 @@
+
+settings set target.x86-disassembly-flavor intel
+
+command alias b breakpoint set
+command alias bd breakpoint disable
+command alias be breakpoint enable
+command alias bdel breakpoint delete
+command alias bcommand breakpoint command add
+command alias commands breakpoint command list
+

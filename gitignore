@@ -1,0 +1,6 @@
+.idea
+.sublime-*
+.DS_Store
+*.pstore
+*.coatidb
+*.coatiproject
