@@ -78,7 +78,6 @@ alias la='ls -a'
 alias lla='ls -la'
 alias grep='grep --color=auto'
 
-alias b='cd ../'
 alias push='git push origin'
 alias co='git checkout'
 alias gs='git status'
@@ -93,11 +92,9 @@ alias subl='subl3'
 # Docker utilities
 alias comp='docker-compose'
 alias reown='sudo chown -R warmwaffles:warmwaffles'
-alias d='docker'
+
 alias cr='docker-compose run'
 alias cu='docker-compose up'
-
-alias shrug="echo '¯\\_(ツ)_/¯'"
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
