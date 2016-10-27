@@ -57,6 +57,12 @@
     foreground = "#F7F3F4"
     timeout = 0
 
+[spotify]
+    appname = "Spotify"
+    background = "#1ed760"
+    foreground = "#ffffff"
+    timeout = 10
+
 [sxhkd]
     appname = "sxhkd"
     background = "#000000"
