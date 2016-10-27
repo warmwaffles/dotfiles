@@ -25,14 +25,25 @@ super + shift + j
   if ! bspc node -s south.local; then bspc node -m south && bspc node $(bspc query -N -n last) -f; fi
 
 # Resize current window
-super + r : {_,shift + ,super + ,shift + super + }h
-  val={200,100,50,10}; bspc node @west -r -${val} || bspc node @east -r -${val}
-super + r : {_,shift + ,super + ,shift + super + }l
-  val={200,100,50,10}; bspc node @west -r +${val} || bspc node @east -r +${val}
-super + r : {_,shift + ,super + ,shift + super + }k
-  val={200,100,50,10}; bspc node @north -r -${val} || bspc node @south -r -${val}
-super + r : {_,shift + ,super + ,shift + super + }j
-  val={200,100,50,10}; bspc node @north -r +${val} || bspc node @south -r +${val}
+super + r : h
+  bspc node @west -r -50 || bspc node @east -r -50
+#super + r : {_,shift + ,super + ,shift + super + }h
+#  val={200,100,50,10}; bspc node @west -r -${val} || bspc node @east -r -${val}
+
+super + r : l
+  bspc node @west -r +50 || bspc node @east -r +50
+#super + r : {_,shift + ,super + ,shift + super + }l
+#  val={200,100,50,10}; bspc node @west -r +${val} || bspc node @east -r +${val}
+
+super + r : k
+  bspc node @north -r -50 || bspc node @south -r -50
+#super + r : {_,shift + ,super + ,shift + super + }k
+#  val={200,100,50,10}; bspc node @north -r -${val} || bspc node @south -r -${val}
+
+super + r : j
+  bspc node @north -r +50 || bspc node @south -r +50
+#super + r : {_,shift + ,super + ,shift + super + }j
+#  val={200,100,50,10}; bspc node @north -r +${val} || bspc node @south -r +${val}
 
 # Set splitting area
 super + ctrl + {h,j,k,l}
@@ -59,8 +70,17 @@ super + bracket{left,right}
   bspc desktop -f {prev,next}
 
 # Focus desktop / transfer node to desktop
-super + {_,shift + }{1-9,0}
-  bspc {desktop -f,node -d} focused:^{1-9,10}
+#super + {_,shift + }{1-9,0}
+#  bspc {desktop -f,node -d} focused:^{1-9,10}
+
+super + {1-9,0}
+  bspc desktop -f focused:^{1-9,10}
+
+super + shift + {1-9,0}
+  bspc node -d focused:^{1-9,10}
+
+#super + ctrl + {1-3}
+#  bspc node -m focused:^{1-3}
 
 # Toggle fullscreen/floating state
 super + shift + f
@@ -81,8 +101,12 @@ super + s
   bspc node -s biggest
 
 # Move focused desktop/node to previously focused monitor
+#super + {_,shift + }y
+#  bspc {desktop,node focused} -m next && bspc {desktop,node} -f last
+
+# Move focused node to next or previous monitor
 super + {_,shift + }y
-  bspc {desktop,node focused} -m next && bspc {desktop,node} -f last
+  bspc node focused -m {next,prev}
 
 # Rotate the tree that the current window belongs to
 super + {_,shift + }c

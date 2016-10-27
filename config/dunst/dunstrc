@@ -69,4 +69,10 @@
     foreground = "#f5f5f5"
     timeout = 0
 
+[slack]
+    appname = "Slack"
+    background = "#2ab27b"
+    foreground = "#ffffff"
+    timeout = 0
+
 # vim:ft=conf

@@ -20,7 +20,6 @@ font-0              = tamzen:size=9;1
 font-1              = siji:pixelsize=10;0
 font-2              = unifont:size=6;-1
 modules-left        = bspwm
-tray-position       = right
 wm-restack          = bspwm
 
 [bar/center]
@@ -71,7 +70,6 @@ font-0              = tamzen:size=9;1
 font-1              = siji:pixelsize=10;0
 font-2              = unifont:size=6;-1
 modules-left        = bspwm
-tray-position       = right
 wm-restack          = bspwm
 
 ; ##############################################################################
