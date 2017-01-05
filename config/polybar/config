@@ -70,6 +70,7 @@ font-0              = tamzen:size=9;1
 font-1              = siji:pixelsize=10;0
 font-2              = unifont:size=6;-1
 modules-left        = bspwm
+modules-right       = filesystem
 wm-restack          = bspwm
 
 ; ##############################################################################
@@ -96,6 +97,36 @@ label-empty = x %index%
 label-empty-foreground = #444
 label-empty-padding = 2
 
+[module/filesystem]
+type = internal/fs
+
+mount-0 = /
+mount-1 = /home
+mount-2 = /var/lib/docker
+mount-3 = /media/synology
+
+interval = 30
+
+format-mounted = <label-mounted> <bar-used>
+
+label-mounted = %mountpoint%: %percentage_free% of %total%
+label-unmounted = %mountpoint%: not mounted
+label-unmounted-foreground = #55
+
+bar-used-width = 32
+bar-used-foreground-0 = #55aa55
+bar-used-foreground-1 = #55aa55
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ff5555
+bar-used-gradient = false
+bar-used-indicator = │
+bar-used-indicator-font = 2
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 2
+bar-used-empty = ─
+bar-used-empty-font = 2
+bar-used-empty-foreground = #55
 
 [module/cpu]
 type = internal/cpu
@@ -295,20 +326,13 @@ label-offline = mpd is off
 label-song-maxlen = 45
 label-song-ellipsis = true
 
-icon-prev = 
-icon-seekb = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-icon-seekf = 
-; icon-prev = ⏮
-; icon-seekb = ⏪
-; icon-stop = ⏹
-; icon-play = ⏵
-; icon-pause = ⏸
-; icon-seekf = ⏩
-; icon-next = ⏭
+icon-prev = ⏮
+icon-seekb = ⏪
+icon-stop = ⏹
+icon-play = ⏵
+icon-pause = ⏸
+icon-seekf = ⏩
+icon-next = ⏭
 
 icon-random = 
 icon-repeat = 

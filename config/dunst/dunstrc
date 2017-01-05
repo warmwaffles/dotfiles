@@ -1,7 +1,5 @@
 [global]
-    #font = "monospace 9"
-    #font = "Roboto Mono for Powerline, 10"
-    font = "Roboto Mono, 9"
+    font = "Inconsolata, 10"
 
     # for a complete reference see http://developer.gnome.org/pango/stable/PangoMarkupFormat.html
     allow_markup = yes
@@ -34,7 +32,7 @@
 
 [frame]
     width = 0
-    color = "#282828"
+    color = "#444444"
 
 [shortcuts]
     close = ctrl+space
@@ -43,18 +41,18 @@
     #context = ctrl+shift+period
 
 [urgency_low]
-    background = "#b58900"
-    foreground = "#F7F3F4"
+    background = "#fba922"
+    foreground = "#000000"
     timeout = 1
 
 [urgency_normal]
-    background = "#268bd2"
-    foreground = "#F7F3F4"
+    background = "#262626"
+    foreground = "#eaeaea"
     timeout = 10
 
 [urgency_critical]
-    background = "#dc322f"
-    foreground = "#F7F3F4"
+    background = "#e02e3c"
+    foreground = "#ffffff"
     timeout = 0
 
 [spotify]

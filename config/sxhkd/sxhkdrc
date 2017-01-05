@@ -4,49 +4,40 @@
 
 # Focus node
 # If no window exist, target monitor/desktop instead
-super + k
+super + w
   bspc node -f north || bspc monitor -f north
-super + j
+super + s
   bspc node -f south || bspc monitor -f south
-super + h
+super + a
   bspc node -f west || bspc monitor -f west || bspc desktop -f prev
-super + l
+super + d
   bspc node -f east || bspc monitor -f east || bspc desktop -f next
 
+super + {_,shift} + n
+  bspc node -f {next,prev}.local
+
+super + {_,shift} + m
+  bspc desktop -f --swap {next,prev}.local
+
 # Swap node
-# If no node exist, send node to monitor instead
-super + shift + h
-  if ! bspc node -s west.local; then bspc node -m west && bspc node $(bspc query -N -n last) -f; fi
-super + shift + l
-  if ! bspc node -s east.local; then bspc node -m east && bspc node $(bspc query -N -n last) -f; fi
-super + shift + k
-  if ! bspc node -s north.local; then bspc node -m north && bspc node $(bspc query -N -n last) -f; fi
-super + shift + j
-  if ! bspc node -s south.local; then bspc node -m south && bspc node $(bspc query -N -n last) -f; fi
+super + shift + {w,a,s,d}
+  bspc node -s {north,west,south,east}.local
 
 # Resize current window
-super + r : h
+super + r : a
   bspc node @west -r -50 || bspc node @east -r -50
-#super + r : {_,shift + ,super + ,shift + super + }h
-#  val={200,100,50,10}; bspc node @west -r -${val} || bspc node @east -r -${val}
 
-super + r : l
+super + r : d
   bspc node @west -r +50 || bspc node @east -r +50
-#super + r : {_,shift + ,super + ,shift + super + }l
-#  val={200,100,50,10}; bspc node @west -r +${val} || bspc node @east -r +${val}
 
-super + r : k
+super + r : w
   bspc node @north -r -50 || bspc node @south -r -50
-#super + r : {_,shift + ,super + ,shift + super + }k
-#  val={200,100,50,10}; bspc node @north -r -${val} || bspc node @south -r -${val}
 
-super + r : j
+super + r : h
   bspc node @north -r +50 || bspc node @south -r +50
-#super + r : {_,shift + ,super + ,shift + super + }j
-#  val={200,100,50,10}; bspc node @north -r +${val} || bspc node @south -r +${val}
 
 # Set splitting area
-super + ctrl + {h,j,k,l}
+super + ctrl + {w,s,a,d}
   bspc node -p ~{west,south,north,east}
 
 # Adjust splitting ratio
@@ -62,16 +53,12 @@ super + ctrl + shift + space
   bspc query -N | xargs -I id -n 1 bspc node id -p cancel
 
 # Cycle non-empty between desktops and monitors
-super + shift + bracket{left,right}
+super + shift + bracket{right,left}
   bspc monitor -f {prev,next}
 
 # Cycle between all desktops and monitors
 super + bracket{left,right}
-  bspc desktop -f {prev,next}
-
-# Focus desktop / transfer node to desktop
-#super + {_,shift + }{1-9,0}
-#  bspc {desktop -f,node -d} focused:^{1-9,10}
+  bspc desktop -f {prev,next}.local
 
 super + {1-9,0}
   bspc desktop -f focused:^{1-9,10}
@@ -92,13 +79,20 @@ super + ctrl + f
 super + shift + t
   bspc node -t \~tiled
 
+# Move floating window with moust
+super + button1
+  bspc pointer -g move
+
+super + button2
+  bspc pointer -g resize_corner
+
 # Close/kill current window
 super + {_,shift + }q
   bspc node -{c,k}
 
 # swap the current node and the biggest node
-super + s
-  bspc node -s biggest
+super + b
+  bspc node -s biggest.local
 
 # Move focused desktop/node to previously focused monitor
 #super + {_,shift + }y
@@ -112,53 +106,21 @@ super + {_,shift + }y
 super + {_,shift + }c
   bspc node @parent -R {90,270}
 
-# Cycle desktop layout
-super + f
-  bspc desktop -l next
-
 # Cycle between windows
-super + {_,shift + }n
+super + {shift,_ + }n
   bspc node -f {prev,next}
-
-# Balance the size of all nodes in the current desktop
-super + b
-  bspc desktop -B
 
 # Focus previously current window
 super + Tab
   bspc node -f last
 
-# Toggle locked state of current window
-super + ctrl + comma
-  bspc node -g locked && notify-send "Toggled locked state"
-
-# Toggle sticky state of current window
-super + ctrl + period
-  bspc node -g sticky && notify-send "Toggled sticky state"
-
-# Toggle private state of current window
-super + ctrl + slash
-  bspc node -g private && notify-send "Toggled private state"
-
-# Focus clicked node
-~button1
-  bspc pointer -g focus
-
 # Reload configuration
 super + Escape
-  pkill -USR1 -x sxhkd && notify-send "Reloaded environment"
+  pkill -USR1 -x sxhkd && pkill polybar && ~/.config/polybar/launch.sh && notify-send "Reloaded environment"
 
 # Quit
 super + shift + Escape
   bspc quit
-
-# focus the next/previous desktop
-#super + bracket{left,right}
-#  bspc desktop -f {prev,next}
-
-# focus the next/previous node
-super + {_,shift + }n
-  bspc node -f {next,prev}
 
 # ##############################################################################
 # move/resize
@@ -200,3 +162,7 @@ XF86Calculator
 
 XF86Explorer
   thunar
+
+super + ctrl + 4
+  yaxg -s -p -e 'mv $f ~/Dropbox/Screenshots'
+

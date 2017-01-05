@@ -32,15 +32,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# XFCE4
-# exec startxfce4
-
 # BSPWM
 xsetroot -cursor_name left_ptr
 nitrogen --restore
 
 sxhkd &
-lemonbuddy left &
-lemonbuddy center &
-lemonbuddy right &
+polybar left &
+polybar center &
+polybar right &
 exec bspwm

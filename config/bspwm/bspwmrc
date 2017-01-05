@@ -6,7 +6,7 @@ bspc config window_gap            3
 bspc config split_ratio           0.50
 bspc config borderless_monocle    true
 bspc config gapless_monocle       true
-bspc config focus_follows_pointer false
+bspc config focus_follows_pointer true
 bspc config auto_alternate        true
 bspc config auto_cancel           true
 bspc config top_padding           28
@@ -23,18 +23,15 @@ bspc config focused_frame_opacity 0
 
 # LEFT
 # DP-4 connected 1920x1080+0+0 (normal left inverted right x axis y axis) 509mm x 286mm
-bspc monitor DP-4 --reset-desktops I II III
+bspc monitor DP-4 --reset-desktops 1 2 3 4 5
 
 # CENTER
 # DP-0 connected primary 1920x1200+1920+0 (normal left inverted right x axis y axis) 546mm x 352mm
-bspc monitor DP-0 --reset-desktops IV V VI
+bspc monitor DP-0 --reset-desktops 6 7 8 9 10
 
 # RIGHT
 # DP-2 connected 1920x1080+3840+0 (normal left inverted right x axis y axis) 509mm x 286mm
-bspc monitor DP-2 --reset-desktops VII IX X
+bspc monitor DP-2 --reset-desktops 11 12 13 14 15
 
 bspc rule -a Gimp desktop=^8 state=floating follow=on
-bspc rule -a google-chrome-stable desktop=^2
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=of
+

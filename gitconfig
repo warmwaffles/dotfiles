@@ -35,6 +35,7 @@
   dic = diff --cached
   last = log -n 1
   tags = tag -l --sort=version:refname --format='%(color:green)%(refname:strip=2)%(color:reset) %(color:yellow)%(objecttype)%(color:reset) %(color:blue)%(objectname:short)%(color:reset) %(creatordate)'
+  co = checkout
 [github]
   user = warmwaffles
 [diff]
