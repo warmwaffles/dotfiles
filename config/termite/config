@@ -1,7 +1,18 @@
+# vim:ft=dosini
 [options]
-font = Monospace = 14
-font = Inconsolata 14
+# font = Monospace = 16
+font = Inconsolata 16
 
+resize_grip = false
+search_wrap = true
+audible_bell = false
+visible_bell = true
+clickable_url = true
+dynamic_title = true
+allow_bold = true
+urgent_on_bell = true
+scroll_on_keystroke = true
+scroll_on_output = false
 scrollback_lines = 50000
 browser = xdg-open
 

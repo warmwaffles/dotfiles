@@ -53,7 +53,7 @@ super + ctrl + shift + space
   bspc query -N | xargs -I id -n 1 bspc node id -p cancel
 
 # Cycle non-empty between desktops and monitors
-super + shift + bracket{right,left}
+super + shift + bracket{left,right}
   bspc monitor -f {prev,next}
 
 # Cycle between all desktops and monitors
@@ -164,5 +164,8 @@ XF86Explorer
   thunar
 
 super + ctrl + 4
-  yaxg -s -p -e 'mv $f ~/Dropbox/Screenshots'
+  yaxg -s -p -e 'mv $f ~/screenshots'
+
+super + ctrl + 3
+  yaxg -p -e 'mv $f ~/screenshots'
 

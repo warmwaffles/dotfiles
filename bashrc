@@ -131,14 +131,6 @@ docker() {
 source /usr/share/nvm/init-nvm.sh
 
 man() {
-  # env LESS_TERMCAP_mb=$'\E[01;31m' \
-  # LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-  # LESS_TERMCAP_me=$'\E[0m' \
-  # LESS_TERMCAP_se=$'\E[0m' \
-  # LESS_TERMCAP_so=$'\E[38;5;246m' \
-  # LESS_TERMCAP_ue=$'\E[0m' \
-  # LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-  # man "$@"
   env \
     LESS_TERMCAP_md=$'\e[1;36m' \
     LESS_TERMCAP_me=$'\e[0m' \
@@ -148,6 +140,13 @@ man() {
     LESS_TERMCAP_us=$'\e[1;32m' \
       man "$@"
 }
+
+# #######
+# GO
+# ######
+
+export GOPATH=~/code/go
+export PATH="$PATH:$GOPATH/bin"
 
 alias open="xdg-open"
 
