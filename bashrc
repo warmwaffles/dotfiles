@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Allow termite to ctrl+shift+t to open in same dir
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_prompt_command
+fi
+
+# Override the term for ssh compatibility to other machines
+export TERM="xterm-256color"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

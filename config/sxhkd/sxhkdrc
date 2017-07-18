@@ -33,7 +33,7 @@ super + r : d
 super + r : w
   bspc node @north -r -50 || bspc node @south -r -50
 
-super + r : h
+super + r : s
   bspc node @north -r +50 || bspc node @south -r +50
 
 # Set splitting area
@@ -53,11 +53,11 @@ super + ctrl + shift + space
   bspc query -N | xargs -I id -n 1 bspc node id -p cancel
 
 # Cycle non-empty between desktops and monitors
-super + shift + bracket{left,right}
+super + shift + {Prior,Next}
   bspc monitor -f {prev,next}
 
 # Cycle between all desktops and monitors
-super + bracket{left,right}
+super + {Prior,Next}
   bspc desktop -f {prev,next}.local
 
 super + {1-9,0}
@@ -144,15 +144,19 @@ super + {Left,Down,Up,Right}
 
 super + Return
   termite
+#  xfce4-terminal
 
 super + space
   rofi -show run
 
-super + F12
-  subl3
-
 super + F11
   enpass
+
+XF86AudioLowerVolume
+  amixer set Master 1000- unmute
+
+XF86AudioRaiseVolume
+  amixer set Master 1000+ unmute
 
 XF86HomePage
   google-chrome-stable
@@ -161,7 +165,7 @@ XF86Calculator
   gnome-calculator
 
 XF86Explorer
-  thunar
+  nautilus
 
 super + ctrl + 4
   yaxg -s -p -e 'mv $f ~/screenshots'

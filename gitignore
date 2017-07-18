@@ -4,3 +4,5 @@
 *.pstore
 *.coatidb
 *.coatiproject
+.vscode
+*.todo

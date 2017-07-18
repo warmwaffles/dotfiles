@@ -23,3 +23,6 @@ bspc monitor DP-0 --reset-desktops VI VII VIII IX X
 # RIGHT
 # DP-2 connected 1920x1080+3840+0 (normal left inverted right x axis y axis) 509mm x 286mm
 bspc monitor DP-2 --reset-desktops XI XII XIII XIV XV
+
+# Floating rules
+bspc rule -a Babylon state=floating monitor=DP-0

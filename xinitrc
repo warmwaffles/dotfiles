@@ -36,6 +36,8 @@ fi
 xsetroot -cursor_name left_ptr
 nitrogen --restore
 
+numlockx &
+
 sxhkd &
 polybar left &
 polybar center &

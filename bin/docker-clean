@@ -2,12 +2,7 @@
 
 set -e
 
-echo "==> Cleaning..."
+docker rm -f $(docker ps -q -f 'status=exited');
+docker rmi -f $(docker images -q -f "dangling=true");
 
-docker rm $(docker ps -q -f 'status=exited');
-
-docker rmi $(docker images -q -f "dangling=true");
-
-docker volume rm $(docker volume ls -qf dangling=true);
-
-echo "==> Complete"
+docker volume rm -f $(docker volume ls -qf dangling=true);
