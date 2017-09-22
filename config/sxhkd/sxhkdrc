@@ -38,7 +38,7 @@ super + r : s
 
 # Set splitting area
 super + ctrl + {w,s,a,d}
-  bspc node -p ~{west,south,north,east}
+  bspc node -p ~{north,south,west,east}
 
 # Adjust splitting ratio
 super + {minus,equal}
@@ -141,6 +141,9 @@ super + {Left,Down,Up,Right}
 # ##############################################################################
 # Application launcher
 # ##############################################################################
+
+super + e
+  subl3 -n
 
 super + Return
   termite

@@ -51,3 +51,5 @@ rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
 *color19:      base02
 *color20:      base04
 *color21:      base06
+
+XTerm.vt100.faceSize: 14

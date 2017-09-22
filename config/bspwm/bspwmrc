@@ -25,4 +25,4 @@ bspc monitor DP-0 --reset-desktops VI VII VIII IX X
 bspc monitor DP-2 --reset-desktops XI XII XIII XIV XV
 
 # Floating rules
-bspc rule -a Babylon state=floating monitor=DP-0
+bspc rule -a hamster state=floating monitor=DP-0

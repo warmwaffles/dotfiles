@@ -33,13 +33,15 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # BSPWM
-xsetroot -cursor_name left_ptr
-nitrogen --restore
+# xsetroot -cursor_name left_ptr
+# nitrogen --restore
+# numlockx &
+# sxhkd &
+# polybar left &
+# polybar center &
+# polybar right &
+# exec bspwm
 
-numlockx &
+# GNOME
+exec gnome-session
 
-sxhkd &
-polybar left &
-polybar center &
-polybar right &
-exec bspwm

@@ -20,7 +20,7 @@ browser = mimeo
 foreground      = #d8d8d8
 foreground_bold = #d8d8d8
 cursor          = #d8d8d8
-background      = rgba(24, 24, 24, .98)
+background      = rgba(24, 24, 24, 1.0)
 
 # 16 color space
 color0  = #181818

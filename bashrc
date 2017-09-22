@@ -162,3 +162,6 @@ alias open="xdg-open"
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
+# added by travis gem
+[ -f /home/warmwaffles/.travis/travis.sh ] && source /home/warmwaffles/.travis/travis.sh
+source "$HOME/.kiex/scripts/kiex"
