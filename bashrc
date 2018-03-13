@@ -96,7 +96,9 @@ alias gf='git fetch'
 alias gti='git'
 alias be='bundle exec'
 alias unixtime='date -u +%s'
-alias subl='subl3'
+
+alias cmakedebug='cmake $1 -DCMAKE_BUILD_TYPE=DEBUG'
+alias cmakerelease='cmake $1 -DCMAKE_BUILD_TYPE=RELEASE'
 
 # Docker utilities
 alias comp='docker-compose'
@@ -125,8 +127,6 @@ export BUILDDIR="/usr/local/pkgs"
 
 export CHEATCOLORS=true
 
-eval $(dircolors -b $HOME/.dircolors)
-
 docker() {
   if command -v "docker-$1" > /dev/null 2>&1; then
     subcommand=$1
@@ -150,9 +150,9 @@ man() {
       man "$@"
 }
 
-# #######
-# GO
-# ######
+# Go
+export GOPATH="$HOME"
+export GOBIN="$HOME/bin"
 
 export GOPATH=~/code/go
 export PATH="$PATH:$GOPATH/bin"
@@ -162,6 +162,7 @@ alias open="xdg-open"
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
-# added by travis gem
-[ -f /home/warmwaffles/.travis/travis.sh ] && source /home/warmwaffles/.travis/travis.sh
-source "$HOME/.kiex/scripts/kiex"
+alias t='tasks'
+
+eval $(dircolors -b $HOME/.dircolors)
+export $(cat ~/.secrets | grep -v ^# | xargs)

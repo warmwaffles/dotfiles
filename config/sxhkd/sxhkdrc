@@ -116,11 +116,17 @@ super + Tab
 
 # Reload configuration
 super + Escape
-  pkill -USR1 -x sxhkd && pkill polybar && ~/.config/polybar/launch.sh && notify-send "Reloaded environment"
+  pkill -USR1 -x sxhkd && pkill polybar && ~/.config/polybar/launch.sh && xrdb -load ~/.Xresources && notify-send "Reloaded environment"
 
 # Quit
 super + shift + Escape
   bspc quit
+
+super + Insert
+  bspc monitor -a "desktop-$(bspc query -m -D | wc -l)"
+
+super + Delete
+  bspc desktop -r
 
 # ##############################################################################
 # move/resize
@@ -147,7 +153,11 @@ super + e
 
 super + Return
   termite
+#  termite -e fish
 #  xfce4-terminal
+
+super + ctrl + Return
+  subl -n
 
 super + space
   rofi -show run
@@ -168,7 +178,7 @@ XF86Calculator
   gnome-calculator
 
 XF86Explorer
-  nautilus
+  pcmanfm
 
 super + ctrl + 4
   yaxg -s -p -e 'mv $f ~/screenshots'

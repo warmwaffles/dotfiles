@@ -6,3 +6,5 @@
 *.coatiproject
 .vscode
 *.todo
+.bundle
+*/vendor/bundle

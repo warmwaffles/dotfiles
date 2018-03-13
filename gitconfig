@@ -1,7 +1,7 @@
 [user]
   name = Matthew Johnston
   email = warmwaffles@gmail.com
-  signingkey = B7837808
+  signingkey = DD30148CA55298F6
 [ui]
   color = true
 [core]
@@ -36,6 +36,8 @@
   last = log -n 1
   tags = tag -l --sort=version:refname --format='%(color:green)%(refname:strip=2)%(color:reset) %(color:yellow)%(objecttype)%(color:reset) %(color:blue)%(objectname:short)%(color:reset) %(creatordate)'
   co = checkout
+  up = rebase --autostash
+  changed = diff --name-only origin/master
 [github]
   user = warmwaffles
 [diff]

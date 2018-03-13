@@ -54,9 +54,10 @@
     background = "#e02e3c"
     foreground = "#ffffff"
     timeout = 0
+    monitor = 0
 
-[spotify]
-    appname = "Spotify"
+[filesystem]
+    appname = ""
     background = "#1ed760"
     foreground = "#ffffff"
     timeout = 10
