@@ -8,3 +8,7 @@
 *.todo
 .bundle
 */vendor/bundle
+.env.*
+venv/
+/vendor
+/.elixir_ls
