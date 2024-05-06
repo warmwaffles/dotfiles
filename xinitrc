@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -32,17 +34,34 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# BSPWM
+# For VSCode Keychain Issues
+# see https://unix.stackexchange.com/a/295652/332452
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+
+# see https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
+eval $(/usr/bin/gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+
+# see https://github.com/NixOS/nixpkgs/issues/14966#issuecomment-520083836
+mkdir -p "$HOME"/.local/share/keyrings
+
 xsetroot -cursor_name left_ptr
 nitrogen --restore
 numlockx &
-sxhkd &
-polybar left &
-polybar center &
-polybar right &
-thunar --daemon &
+
+copyq &
+
+#
+# WINDOW MANAGERS
+#
+
 exec bspwm
+# exec dk
 
 # GNOME
 # exec gnome-session
+
+# Budgie
+# export XDG_CURRENT_DESKTOP=Budgie:GNOME
+# exec budgie-desktop
 
