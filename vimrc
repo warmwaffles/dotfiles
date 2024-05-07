@@ -1,32 +1,6 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-call vundle#rc()
-
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'austintaylor/vim-indentobject'
-Plugin 'juvenn/mustache.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'garbas/vim-snipmate'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'nono/vim-handlebars'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'slim-template/vim-slim'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-vividchalk'
-Plugin 'eventualbuddha/vim-protobuf'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/Align'
-Plugin 'elixir-lang/vim-elixir'
-
 filetype plugin indent on     " required!
 
 syntax on
@@ -49,7 +23,7 @@ set showcmd
 set smartcase
 set softtabstop=2
 set tabstop=8
-set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
+set wildignore=log/**,node_modules/**,target/**,tmp/**
 set wildmenu
 set wildmode=longest,list,full
 

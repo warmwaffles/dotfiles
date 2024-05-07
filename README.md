@@ -1,7 +1,15 @@
 # warmwaffles - Dotfiles
 
-Here is all of my dotfiles that I currently use. Updates will most likely be
-infrequent. But this is what my current main workstation uses.
+All of my configurations and borderline stupid decisions for applications.
 
-I made this repo to share my stuff and also to make it easier for me to
-replicate my preferences to other machines relatively easily.
+## Installation
+
+```
+make install
+```
+
+## Uninstalling
+
+```
+make uninstall
+```

@@ -1,0 +1,31 @@
+-- Don't display the "helpful" message on startup.
+\set QUIET 1
+\pset null '¤'
+\pset linestyle unicode
+-- \setenv PAGER 'pspg -s 0'
+
+
+-- http://www.postgresql.org/docs/9.3/static/app-psql.html#APP-PSQL-PROMPTING
+\set PROMPT1 '%[%033[1m%][%/] # '
+-- PROMPT2 is printed when the prompt expects more input, like when you type
+-- SELECT * FROM<enter>. %R shows what type of input it expects.
+\set PROMPT2 '... > '
+
+-- Show how long each query takes to execute
+\timing
+
+-- Use best available output format
+\x auto
+
+\set VERBOSITY verbose
+
+-- history file per db
+\set HISTFILE ~/.psql_history- :DBNAME
+
+-- don't store duplicates in history
+\set HISTCONTROL ignoredups
+
+-- infinite history
+\set HISTSIZE -1
+
+\set COMP_KEYWORD_CASE upper

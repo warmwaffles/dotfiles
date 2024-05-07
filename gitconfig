@@ -37,7 +37,7 @@
     out = reset HEAD
     back = reset HEAD^
     save = commit -m 'saving'
-        wip = commit -m 'wip\n\n[skip ci]'
+    wip = commit -m 'wip\n\n[skip ci]'
     ignored = ls-files --others -i --exclude-standard
     cp = cherry-pick
     dft = difftool
