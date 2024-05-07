@@ -5,7 +5,7 @@ all: install
 # Please keep this in alphabetical order. It makes life easier.
 CONFIGS = \
 	$(HOME)/.clang-format \
-	$(HOME)/.config \
+	$(HOME)/.config/alacritty/alacritty.toml \
 	$(HOME)/.config/bspwm \
 	$(HOME)/.config/bspwm/bspwmrc \
 	$(HOME)/.config/bspwm/polybar \
@@ -33,6 +33,7 @@ install: $(CONFIGS)
 
 uninstall:
 	rm -f $(HOME)/.clang-format
+	rm -f $(HOME)/.config/alacritty/alacritty.toml
 	rm -f $(HOME)/.config/bspwm/bspwmrc
 	rm -f $(HOME)/.config/bspwm/polybar/config.ini
 	rm -f $(HOME)/.config/bspwm/polybar/reload.sh
@@ -83,6 +84,9 @@ $(HOME)/.tool-versions:
 
 $(HOME)/.vimrc:
 	ln -sf $(CWD)/vimrc $@
+
+$(HOME)/.config:
+	mkdir -p $@
 
 #
 # BSPWM
@@ -140,3 +144,13 @@ $(HOME)/.config/dunst/dunstrc: $(HOME)/.config/dunst
 
 $(HOME)/.config/dunst/colortest: $(HOME)/.config/dunst
 	ln -sf $(CWD)/dunst/colortest $@
+
+#
+# Alacritty
+#
+
+$(HOME)/.config/alacritty: $(HOME)/.config
+	mkdir -p $@
+
+$(HOME)/.config/alacritty/alacritty.toml: $(HOME)/.config/alacritty
+	ln -sf $(CWD)/alacritty/alacritty.toml $@
