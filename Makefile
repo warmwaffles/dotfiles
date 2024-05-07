@@ -5,6 +5,14 @@ all: install
 # Please keep this in alphabetical order. It makes life easier.
 CONFIGS = \
 	$(HOME)/.clang-format \
+	$(HOME)/.config/bspwm \
+	$(HOME)/.config/bspwm/bspwmrc \
+	$(HOME)/.config/bspwm/polybar/config.ini \
+	$(HOME)/.config/bspwm/polybar/reload.sh \
+	$(HOME)/.config/bspwm/reload.sh \
+	$(HOME)/.config/bspwm/sxhkd/launch.sh \
+	$(HOME)/.config/bspwm/sxhkd/reload.sh \
+	$(HOME)/.config/bspwm/sxhkd/sxhkdrc \
 	$(HOME)/.dircolors \
 	$(HOME)/.editorconfig \
 	$(HOME)/.gitattributes \
@@ -19,6 +27,14 @@ install: $(CONFIGS)
 
 uninstall:
 	rm -f $(HOME)/.clang-format
+	rm -f $(HOME)/.config/bspwm/bspwmrc
+	rm -f $(HOME)/.config/bspwm/polybar/config.ini
+	rm -f $(HOME)/.config/bspwm/polybar/reload.sh
+	rm -f $(HOME)/.config/bspwm/reload.sh
+	rm -f $(HOME)/.config/bspwm/reload.sh
+	rm -f $(HOME)/.config/bspwm/sxhkd/launch.sh
+	rm -f $(HOME)/.config/bspwm/sxhkd/reload.sh
+	rm -f $(HOME)/.config/bspwm/sxhkd/sxhkdrc
 	rm -f $(HOME)/.dircolors
 	rm -f $(HOME)/.editorconfig
 	rm -f $(HOME)/.gitattributes
@@ -61,3 +77,37 @@ $(HOME)/.vimrc:
 
 $(HOME)/.config:
 	mkdir -p $@
+
+#
+# BSPWM
+#
+
+$(HOME)/.config/bspwm: $(HOME)/.config
+	mkdir -p $@
+
+$(HOME)/.config/bspwm/polybar: $(HOME)/.config/bspwm
+	mkdir -p $@
+
+$(HOME)/.config/bspwm/sxhkd: $(HOME)/.config/bspwm
+	mkdir -p $@
+
+$(HOME)/.config/bspwm/polybar/config.ini: $(HOME)/.config/bspwm/polybar
+	ln -s $(CWD)/bspwm/polybar/config.ini $@
+
+$(HOME)/.config/bspwm/polybar/reload.sh: $(HOME)/.config/bspwm/polybar
+	ln -s $(CWD)/bspwm/polybar/reload.sh $@
+
+$(HOME)/.config/bspwm/sxhkd/launch.sh: $(HOME)/.config/bspwm/sxhkd
+	ln -s $(CWD)/bspwm/sxhkd/launch.sh $@
+
+$(HOME)/.config/bspwm/sxhkd/reload.sh: $(HOME)/.config/bspwm/sxhkd
+	ln -s $(CWD)/bspwm/sxhkd/reload.sh $@
+
+$(HOME)/.config/bspwm/sxhkd/sxhkdrc: $(HOME)/.config/bspwm/sxhkd
+	ln -s $(CWD)/bspwm/sxhkd/sxhkdrc $@
+
+$(HOME)/.config/bspwm/bspwmrc: $(HOME)/.config/bspwm
+	ln -s $(CWD)/bspwm/bspwmrc $@
+
+$(HOME)/.config/bspwm/reload.sh: $(HOME)/.config/bspwm
+	ln -s $(CWD)/bspwm/reload.sh $@
