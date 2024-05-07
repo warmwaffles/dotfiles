@@ -19,6 +19,7 @@ CONFIGS = \
 	$(HOME)/.config/dunst/colortest \
 	$(HOME)/.config/dunst/dunstrc \
 	$(HOME)/.config/fish/config.fish \
+	$(HOME)/.config/kitty/kitty.conf \
 	$(HOME)/.dircolors \
 	$(HOME)/.editorconfig \
 	$(HOME)/.gitattributes \
@@ -45,6 +46,7 @@ uninstall:
 	rm -f $(HOME)/.config/dunst/colortest
 	rm -f $(HOME)/.config/dunst/dunstrc
 	rm -f $(HOME)/.config/fish/config.fish
+	rm -f $(HOME)/.config/kitty/kitty.conf
 	rm -f $(HOME)/.dircolors
 	rm -f $(HOME)/.editorconfig
 	rm -f $(HOME)/.gitattributes
@@ -144,6 +146,16 @@ $(HOME)/.config/dunst/dunstrc: $(HOME)/.config/dunst
 
 $(HOME)/.config/dunst/colortest: $(HOME)/.config/dunst
 	ln -sf $(CWD)/dunst/colortest $@
+
+#
+# Kitty
+#
+
+$(HOME)/.config/kitty: $(HOME)/.config
+	mkdir -p $@
+
+$(HOME)/.config/kitty/kitty.conf:
+	ln -sf $(CWD)/kitty/kitty.conf $@
 
 #
 # Alacritty
