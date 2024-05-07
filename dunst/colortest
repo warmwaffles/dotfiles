@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#
+# Script to test notification styling
+#
+[[ "$1" =~ ^(|low|normal|critical)$ ]] || shift
+[[ "$1" =~ ^(|low)$ ]] && notify-send -t 2000 -u low "Low urgency title" "Lorem ipsum dolor sit amet"
+[[ "$1" =~ ^(|normal)$ ]] && notify-send -t 2000 -u normal "Normal urgency title" "Lorem ipsum dolor sit amet"
+[[ "$1" =~ ^(|critical)$ ]] && notify-send -t 2000 -u critical "Critical urgency title" "Lorem ipsum dolor sit amet"

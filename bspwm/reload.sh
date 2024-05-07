@@ -6,3 +6,5 @@ $HOME/.config/bspwm/sxhkd/reload.sh
 $HOME/.config/bspwm/polybar/reload.sh
 
 xrdb -load ~/.Xresources
+
+notify-send "Reloaded environment"

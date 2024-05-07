@@ -5,14 +5,20 @@ all: install
 # Please keep this in alphabetical order. It makes life easier.
 CONFIGS = \
 	$(HOME)/.clang-format \
+	$(HOME)/.config \
 	$(HOME)/.config/bspwm \
 	$(HOME)/.config/bspwm/bspwmrc \
+	$(HOME)/.config/bspwm/polybar \
 	$(HOME)/.config/bspwm/polybar/config.ini \
 	$(HOME)/.config/bspwm/polybar/reload.sh \
 	$(HOME)/.config/bspwm/reload.sh \
+	$(HOME)/.config/bspwm/sxhkd \
 	$(HOME)/.config/bspwm/sxhkd/launch.sh \
 	$(HOME)/.config/bspwm/sxhkd/reload.sh \
 	$(HOME)/.config/bspwm/sxhkd/sxhkdrc \
+	$(HOME)/.config/dunst/colortest \
+	$(HOME)/.config/dunst/dunstrc \
+	$(HOME)/.config/fish/config.fish \
 	$(HOME)/.dircolors \
 	$(HOME)/.editorconfig \
 	$(HOME)/.gitattributes \
@@ -35,6 +41,9 @@ uninstall:
 	rm -f $(HOME)/.config/bspwm/sxhkd/launch.sh
 	rm -f $(HOME)/.config/bspwm/sxhkd/reload.sh
 	rm -f $(HOME)/.config/bspwm/sxhkd/sxhkdrc
+	rm -f $(HOME)/.config/dunst/colortest
+	rm -f $(HOME)/.config/dunst/dunstrc
+	rm -f $(HOME)/.config/fish/config.fish
 	rm -f $(HOME)/.dircolors
 	rm -f $(HOME)/.editorconfig
 	rm -f $(HOME)/.gitattributes
@@ -46,68 +55,88 @@ uninstall:
 	rm -f $(HOME)/.vimrc
 
 $(HOME)/.dircolors:
-	ln -s $(CWD)/dircolors $@
+	ln -sf $(CWD)/dircolors $@
 
 $(HOME)/.clang-format:
-	ln -s $(CWD)/clang-format $@
+	ln -sf $(CWD)/clang-format $@
 
 $(HOME)/.editorconfig:
-	ln -s $(CWD)/editorconfig $@
+	ln -sf $(CWD)/editorconfig $@
 
 $(HOME)/.gitattributes:
-	ln -s $(CWD)/gitattributes $@
+	ln -sf $(CWD)/gitattributes $@
 
 $(HOME)/.gitconfig:
-	ln -s $(CWD)/gitconfig $@
+	ln -sf $(CWD)/gitconfig $@
 
 $(HOME)/.gitignore:
-	ln -s $(CWD)/gitignore $@
+	ln -sf $(CWD)/gitignore $@
 
 $(HOME)/.lldbinit:
-	ln -s $(CWD)/lldbinit $@
+	ln -sf $(CWD)/lldbinit $@
 
 $(HOME)/.psqlrc:
-	ln -s $(CWD)/psqlrc $@
+	ln -sf $(CWD)/psqlrc $@
 
 $(HOME)/.tool-versions:
-	ln -s $(CWD)/tool-versions $@
+	ln -sf $(CWD)/tool-versions $@
 
 $(HOME)/.vimrc:
-	ln -s $(CWD)/vimrc $@
-
-$(HOME)/.config:
-	mkdir -p $@
+	ln -sf $(CWD)/vimrc $@
 
 #
 # BSPWM
 #
 
-$(HOME)/.config/bspwm: $(HOME)/.config
+$(HOME)/.config/bspwm:
 	mkdir -p $@
 
-$(HOME)/.config/bspwm/polybar: $(HOME)/.config/bspwm
+$(HOME)/.config/bspwm/polybar:
 	mkdir -p $@
 
-$(HOME)/.config/bspwm/sxhkd: $(HOME)/.config/bspwm
+$(HOME)/.config/bspwm/sxhkd:
 	mkdir -p $@
 
 $(HOME)/.config/bspwm/polybar/config.ini: $(HOME)/.config/bspwm/polybar
-	ln -s $(CWD)/bspwm/polybar/config.ini $@
+	ln -sf $(CWD)/bspwm/polybar/config.ini $@
 
 $(HOME)/.config/bspwm/polybar/reload.sh: $(HOME)/.config/bspwm/polybar
-	ln -s $(CWD)/bspwm/polybar/reload.sh $@
+	ln -sf $(CWD)/bspwm/polybar/reload.sh $@
 
 $(HOME)/.config/bspwm/sxhkd/launch.sh: $(HOME)/.config/bspwm/sxhkd
-	ln -s $(CWD)/bspwm/sxhkd/launch.sh $@
+	ln -sf $(CWD)/bspwm/sxhkd/launch.sh $@
 
 $(HOME)/.config/bspwm/sxhkd/reload.sh: $(HOME)/.config/bspwm/sxhkd
-	ln -s $(CWD)/bspwm/sxhkd/reload.sh $@
+	ln -sf $(CWD)/bspwm/sxhkd/reload.sh $@
 
 $(HOME)/.config/bspwm/sxhkd/sxhkdrc: $(HOME)/.config/bspwm/sxhkd
-	ln -s $(CWD)/bspwm/sxhkd/sxhkdrc $@
+	ln -sf $(CWD)/bspwm/sxhkd/sxhkdrc $@
 
 $(HOME)/.config/bspwm/bspwmrc: $(HOME)/.config/bspwm
-	ln -s $(CWD)/bspwm/bspwmrc $@
+	ln -sf $(CWD)/bspwm/bspwmrc $@
 
 $(HOME)/.config/bspwm/reload.sh: $(HOME)/.config/bspwm
-	ln -s $(CWD)/bspwm/reload.sh $@
+	ln -sf $(CWD)/bspwm/reload.sh $@
+
+#
+# Fish
+#
+
+$(HOME)/.config/fish:
+	mkdir -p $@
+
+$(HOME)/.config/fish/config.fish: $(HOME)/.config/fish
+	ln -sf $(CWD)/fish/config.fish $@
+
+#
+# Dunst
+#
+
+$(HOME)/.config/dunst:
+	mkdir -p $@
+
+$(HOME)/.config/dunst/dunstrc: $(HOME)/.config/dunst
+	ln -sf $(CWD)/dunst/dunstrc $@
+
+$(HOME)/.config/dunst/colortest: $(HOME)/.config/dunst
+	ln -sf $(CWD)/dunst/colortest $@
