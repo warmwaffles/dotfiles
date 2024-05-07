@@ -18,16 +18,16 @@ CONFIGS = \
 install: $(CONFIGS)
 
 uninstall:
-	-test -L $(HOME)/.dircolors && rm -f $(HOME)/.dircolors
-	-test -L $(HOME)/.clang-format && rm -f $(HOME)/.clang-format
-	-test -L $(HOME)/.editorconfig && rm -f $(HOME)/.editorconfig
-	-test -L $(HOME)/.gitattributes && rm -f $(HOME)/.gitattributes
-	-test -L $(HOME)/.gitconfig && rm -f $(HOME)/.gitconfig
-	-test -L $(HOME)/.gitignore && rm -f $(HOME)/.gitignore
-	-test -L $(HOME)/.lldbinit && rm -f $(HOME)/.lldbinit
-	-test -L $(HOME)/.psqlrc && rm -f $(HOME)/.psqlrc
-	-test -L $(HOME)/.tool-versions && rm -f $(HOME)/.tool-versions
-	-test -L $(HOME)/.vimrc && rm -f $(HOME)/.vimrc
+	rm -f $(HOME)/.clang-format
+	rm -f $(HOME)/.dircolors
+	rm -f $(HOME)/.editorconfig
+	rm -f $(HOME)/.gitattributes
+	rm -f $(HOME)/.gitconfig
+	rm -f $(HOME)/.gitignore
+	rm -f $(HOME)/.lldbinit
+	rm -f $(HOME)/.psqlrc
+	rm -f $(HOME)/.tool-versions
+	rm -f $(HOME)/.vimrc
 
 $(HOME)/.dircolors:
 	ln -s $(CWD)/dircolors $@
