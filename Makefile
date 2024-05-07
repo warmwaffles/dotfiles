@@ -4,8 +4,8 @@ all: install
 
 # Please keep this in alphabetical order. It makes life easier.
 CONFIGS = \
-	$(HOME)/.dircolors \
 	$(HOME)/.clang-format \
+	$(HOME)/.dircolors \
 	$(HOME)/.editorconfig \
 	$(HOME)/.gitattributes \
 	$(HOME)/.gitconfig \
