@@ -30,31 +30,34 @@ uninstall:
 	-test -L $(HOME)/.vimrc && rm -f $(HOME)/.vimrc
 
 $(HOME)/.dircolors:
-	ln -s $(CWD)/dircolors $(HOME)/.dircolors
+	ln -s $(CWD)/dircolors $@
 
 $(HOME)/.clang-format:
-	ln -s $(CWD)/clang-format $(HOME)/.clang-format
+	ln -s $(CWD)/clang-format $@
 
 $(HOME)/.editorconfig:
-	ln -s $(CWD)/editorconfig $(HOME)/.editorconfig
+	ln -s $(CWD)/editorconfig $@
 
 $(HOME)/.gitattributes:
-	ln -s $(CWD)/gitattributes $(HOME)/.gitattributes
+	ln -s $(CWD)/gitattributes $@
 
 $(HOME)/.gitconfig:
-	ln -s $(CWD)/gitconfig $(HOME)/.gitconfig
+	ln -s $(CWD)/gitconfig $@
 
 $(HOME)/.gitignore:
-	ln -s $(CWD)/gitignore $(HOME)/.gitignore
+	ln -s $(CWD)/gitignore $@
 
 $(HOME)/.lldbinit:
-	ln -s $(CWD)/lldbinit $(HOME)/.lldbinit
+	ln -s $(CWD)/lldbinit $@
 
 $(HOME)/.psqlrc:
-	ln -s $(CWD)/psqlrc $(HOME)/.psqlrc
+	ln -s $(CWD)/psqlrc $@
 
 $(HOME)/.tool-versions:
-	ln -s $(CWD)/tool-versions $(HOME)/.tool-versions
+	ln -s $(CWD)/tool-versions $@
 
 $(HOME)/.vimrc:
-	ln -s $(CWD)/vimrc $(HOME)/.vimrc
+	ln -s $(CWD)/vimrc $@
+
+$(HOME)/.config:
+	mkdir -p $@
