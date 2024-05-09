@@ -34,3 +34,22 @@ italic.family = "Berkeley Mono"
 bold_italic.family = "Berkeley Mono"
 
 size = 14.0
+
+[[hints.enabled]]
+# On my machine, I have a shim for `open` to go to `xdg-open` so that Mac
+# scripts can function with little need to cry.
+command = "open"
+# command = "xdg-open" # On Linux/BSD
+# command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding = { key = "U", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|htts://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+
+[keyboard]
+bindings = [
+    {key = "T", mods = "Control|Shift", action = "CreateNewWindow"},
+    {key = "Q", mods = "Control", action = "Quit"},
+]
