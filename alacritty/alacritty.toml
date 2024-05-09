@@ -35,6 +35,11 @@ bold_italic.family = "Berkeley Mono"
 
 size = 14.0
 
+[cursor]
+style = { blinking = "On" }
+blink_interval = 500
+thickness = 0.2
+
 [[hints.enabled]]
 # On my machine, I have a shim for `open` to go to `xdg-open` so that Mac
 # scripts can function with little need to cry.
