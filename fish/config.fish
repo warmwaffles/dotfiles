@@ -1,3 +1,6 @@
+# Disable fish greeting
+set -g fish_greeting ""
+
 # Dracula Color Palette
 set -l foreground 383a42
 set -l selection 44475a
@@ -11,26 +14,33 @@ set -l cyan 27618d
 set -l pink ce33c0
 
 # Syntax Highlighting Colors
-set -g fish_color_normal $foreground
-set -g fish_color_command $cyan
-set -g fish_color_quote $yellow
-set -g fish_color_redirection $foreground
-set -g fish_color_end $orange
-set -g fish_color_error $red
-set -g fish_color_param $purple
-set -g fish_color_comment $comment
-set -g fish_color_match --background=$selection
-set -g fish_color_selection --background=$selection
-set -g fish_color_search_match --background=$selection
-set -g fish_color_operator $green
-set -g fish_color_escape $pink
-set -g fish_color_autosuggestion $comment
+set -g fish_color_autosuggestion 8A9199
+set -g fish_color_command        55B4D4
+set -g fish_color_comment        ABB0B6
+set -g fish_color_cwd            399EE6
+set -g fish_color_end            ED9366
+set -g fish_color_error          F51818
+set -g fish_color_escape         4CBF99
+set -g fish_color_match          F07171
+set -g fish_color_normal         575F66
+set -g fish_color_operator       FF9940
+set -g fish_color_param          575F66
+set -g fish_color_quote          86B300
+set -g fish_color_redirection    A37ACC
+set -g fish_color_search_match --background FF9940
+set -g fish_color_selection      FF9940
+
+# color for fish default prompts item
+set -g fish_color_cancel      FAFAFA
+set -g fish_color_host        A37ACC
+set -g fish_color_host_remote A37ACC
+set -g fish_color_user        FA8D3E
 
 # Completion Pager Colors
-set -g fish_pager_color_progress $comment
-set -g fish_pager_color_prefix $cyan
-set -g fish_pager_color_completion $foreground
-set -g fish_pager_color_description $comment
+set -g fish_pager_color_progress ABB0B6
+set -g fish_pager_color_prefix 55B4D4
+set -g fish_pager_color_completion 575F66
+set -g fish_pager_color_description ABB0B6
 
 # fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
@@ -74,9 +84,9 @@ set -xg SXHKD_SHELL sh
 set -xg GNUPGHOME /home/warmwaffles/.gnupg
 set -xg _JAVA_AWT_WM_NONREPARENTING 1
 
-set -U fish_user_paths $HOME/.local/bin $fish_user_paths
-set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
-set -U fish_user_paths $HOME/go/bin $fish_user_paths
+set -g fish_user_paths $HOME/.local/bin $fish_user_paths
+set -g fish_user_paths $HOME/.cargo/bin $fish_user_paths
+set -g fish_user_paths $HOME/go/bin $fish_user_paths
 
 # SV4GIT
 set -xg SV4GIT_HOME $HOME/.config/sv4git
