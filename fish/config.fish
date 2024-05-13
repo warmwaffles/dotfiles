@@ -77,7 +77,6 @@ end
 set -xg EDITOR subl
 set -xg BROWSER x-www-browser:chromium
 set -xg KERL_BUILD_DOCS yes
-set -xg NNN_FIFO "/tmp/nnn.fifo"
 set -xg KUBE_EDITOR "vim"
 set -xg TERM xterm
 set -xg SXHKD_SHELL sh
