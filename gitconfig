@@ -45,6 +45,7 @@
     tags = tag -l --sort=version:refname --format='%(color:green)%(refname:strip=2)%(color:reset) %(color:yellow)%(objecttype)%(color:reset) %(color:blue)%(objectname:short)%(color:reset) %(creatordate)'
     co = checkout
     up = rebase --autostash
+    staash = stash --all
     changed = diff --name-only origin/master
     blg = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset) - %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(color:green)(%(committerdate:relative))%(color:reset) %(color:bold cyan)<%(authorname)>%(color:reset)'
     subpull = submodule foreach git pull origin master
