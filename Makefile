@@ -159,6 +159,7 @@ $(HOME)/.config/nvim/init.lua: $(HOME)/.config/nvim
 #
 
 # Please keep this in alphabetical order. It makes life easier.
+CONFIGS += $(ALACRITTY_CONFIGS)
 CONFIGS += $(BSPWM_CONFIGS)
 CONFIGS += $(DUNST_CONFIGS)
 CONFIGS += $(FISH_CONFIGS)
@@ -170,6 +171,7 @@ CONFIGS += $(NEOVIM_CONFIGS)
 install: $(CONFIGS)
 
 uninstall:
+	rm -f $(ALACRITTY_CONFIGS)
 	rm -f $(BSPWM_CONFIGS)
 	rm -f $(DUNST_CONFIGS)
 	rm -f $(FISH_CONFIGS)
