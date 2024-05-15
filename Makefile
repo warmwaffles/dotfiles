@@ -193,6 +193,11 @@ SCRIPTS += $(HOME)/.local/bin/open
 $(HOME)/.local/bin/open: $(HOME)/.local/bin
 	ln -sf $(CWD)/bin/open $@
 
+SCRIPTS += $(HOME)/.local/bin/k3s-killall.sh
+$(HOME)/.local/bin/k3s-killall.sh: $(HOME)/.local/bin
+	ln -sf $(CWD)/bin/k3s-killall.sh $@
+
+
 #
 # Utility section to install and do book keeping
 #
