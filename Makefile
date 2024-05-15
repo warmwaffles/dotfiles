@@ -167,6 +167,21 @@ $(HOME)/.config/paru/paru.conf: $(HOME)/.config/paru
 	ln -sf $(CWD)/paru/paru.conf $@
 
 #
+# Scripts
+#
+
+$(HOME)/.local/bin: $(HOME)/.local
+	mkdir -p $@
+
+SCRIPTS += $(HOME)/.local/bin/git-cleanup
+$(HOME)/.local/bin/git-cleanup: $(HOME)/.local/bin
+	ln -sf $(CWD)/bin/git-cleanup $@
+
+SCRIPTS += $(HOME)/.local/bin/add-desktop
+$(HOME)/.local/bin/add-desktop: $(HOME)/.local/bin
+	ln -sf $(CWD)/bin/add-desktop $@
+
+#
 # Utility section to install and do book keeping
 #
 
@@ -180,6 +195,7 @@ CONFIGS += $(GIT_CONFIGS)
 CONFIGS += $(KITTY_CONFIGS)
 CONFIGS += $(NEOVIM_CONFIGS)
 CONFIGS += $(PACKAGE_CONFIGS)
+CONFIGS += $(SCRIPTS)
 
 install: $(CONFIGS)
 
@@ -193,3 +209,4 @@ uninstall:
 	rm -f $(KITTY_CONFIGS)
 	rm -f $(NEOVIM_CONFIGS)
 	rm -f $(PACKAGE_CONFIGS)
+	rm -f $(SCRIPTS)

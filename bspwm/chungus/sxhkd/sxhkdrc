@@ -123,11 +123,11 @@ super + Escape
 super + shift + Escape
   bspc quit
 
+# Insert a desktop
 super + Insert
-  /home/warmwaffles/bin/monitor-insert
-  # Bash Way
-  # bspc monitor -a "desktop-$(bspc query -m -D | wc -l)"
+  ~/.local/bin/add-desktop
 
+# Remove the last desktop
 super + Delete
   bspc desktop -r
 
