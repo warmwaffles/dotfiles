@@ -83,6 +83,12 @@ set -xg SXHKD_SHELL sh
 set -xg GNUPGHOME /home/warmwaffles/.gnupg
 set -xg _JAVA_AWT_WM_NONREPARENTING 1
 
+set -xg XDG_CONFIG_HOME $HOME/.config
+set -xg XDG_CACHE_HOME $HOME/.cache
+set -xg XDG_DOWNLOADS $HOME/downloads
+set -xg XDG_DATA_HOME $HOME/.local/share
+set -xg XDG_STATE_HOME $HOME/.local/state
+
 set -g fish_user_paths $HOME/.local/bin $fish_user_paths
 set -g fish_user_paths $HOME/.cargo/bin $fish_user_paths
 set -g fish_user_paths $HOME/go/bin $fish_user_paths
