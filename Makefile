@@ -1,4 +1,5 @@
 CWD=$(shell pwd)
+HOSTNAME=$(shell hostname)
 
 # install and uninstall are at the bottom of the file
 all: install
@@ -69,27 +70,27 @@ $(HOME)/.config/bspwm/sxhkd:
 
 BSPWM_CONFIGS += $(HOME)/.config/bspwm/polybar/config.ini
 $(HOME)/.config/bspwm/polybar/config.ini: $(HOME)/.config/bspwm/polybar
-	ln -sf $(CWD)/bspwm/polybar/config.ini $@
+	ln -sf $(CWD)/bspwm/$(HOSTNAME)/polybar/config.ini $@
 
 BSPWM_CONFIGS += $(HOME)/.config/bspwm/polybar/reload.sh
 $(HOME)/.config/bspwm/polybar/reload.sh: $(HOME)/.config/bspwm/polybar
-	ln -sf $(CWD)/bspwm/polybar/reload.sh $@
+	ln -sf $(CWD)/bspwm/$(HOSTNAME)/polybar/reload.sh $@
 
 BSPWM_CONFIGS += $(HOME)/.config/bspwm/sxhkd/launch.sh
 $(HOME)/.config/bspwm/sxhkd/launch.sh: $(HOME)/.config/bspwm/sxhkd
-	ln -sf $(CWD)/bspwm/sxhkd/launch.sh $@
+	ln -sf $(CWD)/bspwm/$(HOSTNAME)/sxhkd/launch.sh $@
 
 BSPWM_CONFIGS += $(HOME)/.config/bspwm/sxhkd/reload.sh
 $(HOME)/.config/bspwm/sxhkd/reload.sh: $(HOME)/.config/bspwm/sxhkd
-	ln -sf $(CWD)/bspwm/sxhkd/reload.sh $@
+	ln -sf $(CWD)/bspwm/$(HOSTNAME)/sxhkd/reload.sh $@
 
 BSPWM_CONFIGS += $(HOME)/.config/bspwm/sxhkd/sxhkdrc
 $(HOME)/.config/bspwm/sxhkd/sxhkdrc: $(HOME)/.config/bspwm/sxhkd
-	ln -sf $(CWD)/bspwm/sxhkd/sxhkdrc $@
+	ln -sf $(CWD)/bspwm/$(HOSTNAME)/sxhkd/sxhkdrc $@
 
 BSPWM_CONFIGS += $(HOME)/.config/bspwm/bspwmrc
 $(HOME)/.config/bspwm/bspwmrc: $(HOME)/.config/bspwm
-	ln -sf $(CWD)/bspwm/bspwmrc $@
+	ln -sf $(CWD)/bspwm/$(HOSTNAME)/bspwmrc $@
 
 BSPWM_CONFIGS += $(HOME)/.config/bspwm/reload.sh
 $(HOME)/.config/bspwm/reload.sh: $(HOME)/.config/bspwm
