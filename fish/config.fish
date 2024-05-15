@@ -74,10 +74,10 @@ end
 # Environment Variables
 #
 
-set -xg EDITOR subl
+set -xg EDITOR nvim
 set -xg BROWSER x-www-browser:chromium
 set -xg KERL_BUILD_DOCS yes
-set -xg KUBE_EDITOR "vim"
+set -xg KUBE_EDITOR "nvim"
 set -xg TERM xterm
 set -xg SXHKD_SHELL sh
 set -xg GNUPGHOME /home/warmwaffles/.gnupg
