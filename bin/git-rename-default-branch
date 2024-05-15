@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Usage:
+#
+# git-rename-default-branch <old name> <new name>
+#
+
+set -ex
+
+git branch -m $1 $2
+git fetch origin
+git branch -u origin/$2 $2
+git remote set-head origin -a

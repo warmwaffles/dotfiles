@@ -102,3 +102,8 @@ if status is-interactive
 
   direnv hook fish | source
 end
+
+# Aliases
+function utcnow
+    date -u +"%Y-%m-%dT%TZ"
+end

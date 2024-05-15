@@ -177,9 +177,21 @@ SCRIPTS += $(HOME)/.local/bin/git-cleanup
 $(HOME)/.local/bin/git-cleanup: $(HOME)/.local/bin
 	ln -sf $(CWD)/bin/git-cleanup $@
 
+SCRIPTS += $(HOME)/.local/bin/git-rename-default-branch
+$(HOME)/.local/bin/git-rename-default-branch: $(HOME)/.local/bin
+	ln -sf $(CWD)/bin/git-rename-default-branch $@
+
 SCRIPTS += $(HOME)/.local/bin/add-desktop
 $(HOME)/.local/bin/add-desktop: $(HOME)/.local/bin
 	ln -sf $(CWD)/bin/add-desktop $@
+
+SCRIPTS += $(HOME)/.local/bin/submerge
+$(HOME)/.local/bin/submerge: $(HOME)/.local/bin
+	ln -sf $(CWD)/bin/submerge $@
+
+SCRIPTS += $(HOME)/.local/bin/open
+$(HOME)/.local/bin/open: $(HOME)/.local/bin
+	ln -sf $(CWD)/bin/open $@
 
 #
 # Utility section to install and do book keeping
