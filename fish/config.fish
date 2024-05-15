@@ -104,6 +104,6 @@ if status is-interactive
 end
 
 # Aliases
-function utcnow
+function utcnow -d "Gives an iso8601 string"
     date -u +"%Y-%m-%dT%TZ"
 end
