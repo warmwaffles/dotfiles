@@ -155,6 +155,17 @@ $(HOME)/.config/nvim/init.lua: $(HOME)/.config/nvim
 	ln -sf $(CWD)/nvim/init.lua $@
 
 #
+# Packages
+#
+
+$(HOME)/.config/paru: $(HOME)/.config
+	mkdir -p $@
+
+PACKAGE_CONFIGS += $(HOME)/.config/paru/paru.conf
+$(HOME)/.config/paru/paru.conf: $(HOME)/.config/paru
+	ln -sf $(CWD)/paru/paru.conf $@
+
+#
 # Utility section to install and do book keeping
 #
 
@@ -167,6 +178,7 @@ CONFIGS += $(GENERAL_CONFIGS)
 CONFIGS += $(GIT_CONFIGS)
 CONFIGS += $(KITTY_CONFIGS)
 CONFIGS += $(NEOVIM_CONFIGS)
+CONFIGS += $(PACKAGE_CONFIGS)
 
 install: $(CONFIGS)
 
@@ -179,3 +191,4 @@ uninstall:
 	rm -f $(GIT_CONFIGS)
 	rm -f $(KITTY_CONFIGS)
 	rm -f $(NEOVIM_CONFIGS)
+	rm -f $(PACKAGE_CONFIGS)
