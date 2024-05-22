@@ -156,6 +156,24 @@ $(HOME)/.config/nvim/init.lua: $(HOME)/.config/nvim
 	ln -sf $(CWD)/nvim/init.lua $@
 
 #
+# Bat
+#
+
+$(HOME)/.config/bat: $(HOME)/.config
+	mkdir -p $@
+
+$(HOME)/.config/bat/syntaxes: $(HOME)/.config/bat
+	mkdir -p $@
+
+BAT_CONFIGS += $(HOME)/.config/bat/config
+$(HOME)/.config/bat/config: $(HOME)/.config/bat
+	ln -sf $(CWD)/bat/config $@
+
+BAT_CONFIGS += $(HOME)/.config/bat/syntaxes/xit.sublime-syntax
+$(HOME)/.config/bat/syntaxes/xit.sublime-syntax: $(HOME)/.config/bat/syntaxes
+	ln -sf $(CWD)/bat/syntaxes/xit.sublime-syntax $@
+
+#
 # Packages
 #
 
@@ -204,6 +222,7 @@ $(HOME)/.local/bin/k3s-killall.sh: $(HOME)/.local/bin
 
 # Please keep this in alphabetical order. It makes life easier.
 CONFIGS += $(ALACRITTY_CONFIGS)
+CONFIGS += $(BAT_CONFIGS)
 CONFIGS += $(BSPWM_CONFIGS)
 CONFIGS += $(DUNST_CONFIGS)
 CONFIGS += $(FISH_CONFIGS)
@@ -218,6 +237,7 @@ install: $(CONFIGS)
 
 uninstall:
 	rm -f $(ALACRITTY_CONFIGS)
+	rm -f $(BAT_CONFIGS)
 	rm -f $(BSPWM_CONFIGS)
 	rm -f $(DUNST_CONFIGS)
 	rm -f $(FISH_CONFIGS)

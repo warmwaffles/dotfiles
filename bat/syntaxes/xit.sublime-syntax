@@ -1,0 +1,95 @@
+%YAML 1.2
+# http://www.sublimetext.com/docs/syntax.html
+# https://www.sublimetext.com/docs/scope_naming.html
+---
+name: '[x]it!'
+file_extensions: [xit]
+scope: source.xit
+contexts:
+
+  # Every scope should have a conventional fallback
+  # scope, so that the highlighting also works with
+  # other themes, in an at least somewhat meaningful way.
+
+  main:
+  - include: group
+
+  exit_on_blankline:
+  - match: '^\s*$'
+    pop: 99999
+
+  group:
+  # A group can either start with an item...
+  - match: '^(?=\[)'
+    push: items
+
+  # ...or with a title (single line)
+  - match: '^[^\s].*'
+    scope: markup.underline.xit markup.other.title.xit
+    push: items
+
+  # Anything else is invalid.
+  - match: '^.*'
+    scope: invalid.xit
+
+  items:
+  - include: exit_on_blankline
+
+  # Match checkboxes and set meta scopes.
+  - match: '^\[ \](?= |$)'
+    scope: markup.bold variable.function.xit markup.other.checkbox.open.xit
+    push:
+    - meta_scope: meta.item.status.open.xit
+    - include: item
+  - match: '^\[x\](?= |$)'
+    scope: markup.bold.xit markup.inserted.xit markup.other.checkbox.checked.xit
+    push:
+    - meta_scope: comment.xit meta.item.status.checked.xit
+    - include: item
+  - match: '^\[@\](?= |$)'
+    scope: markup.bold.xit constant.numeric.xit markup.other.checkbox.ongoing.xit
+    push:
+    - meta_scope: meta.item.status.ongoing.xit
+    - include: item
+  - match: '^\[~\](?= |$)'
+    scope: markup.bold.xit comment.xit markup.other.checkbox.obsolete.xit
+    push:
+    - meta_scope: comment.xit meta.item.status.obsolete.xit
+    - include: item
+
+  # Any other “non-item” is invalid.
+  - match: '.*'
+    scope: invalid.xit
+
+  item:
+  - include: exit_on_blankline
+
+  - match: ' '
+    push:
+    - match: '((!*)(\.*)|(\.*)(!*))(?= |$)'
+      captures:
+        2: markup.deleted.xit markup.bold markup.other.priority.exclamation.xit
+        3: markup.deleted.xit markup.other.priority.dot.xit
+        4: markup.deleted.xit markup.other.priority.dot.xit
+        5: markup.deleted.xit markup.bold markup.other.priority.exclamation.xit
+    - match: ''
+      push:
+      - include: exit_on_blankline
+      - meta_scope: markup.other.description.xit meta.description.xit
+      - match: '^(?!    )'
+        pop: 3
+
+      # Due dates. 
+      # It applies basic static sanity checks on the dates, but it can’t
+      # enforce valid calendar dates.
+      - match: '-> ((\d{4})((([-/])(0[1-9]|1[0-2])(\5(0[1-9]|[1-2]\d|3[0-1])?)?)|([-/](W(0[1-9]|[1-4]\d|5[0-3])|Q[1-4])))?)(?![-/])(?=[\p{P} ]|$)'
+        scope: storage.type.xit markup.other.due_date.xit
+
+      # Tags. (The `match: ...` can’t be quoted!)
+      - match: ((?<=[\s\p{P}])\#[\p{L}\d_-]+)(=((\'.*\')|(".*")|([\p{L}\d_-]+)))?
+        captures:
+          1: markup.raw.inline.xit markup.other.tag.name.xit
+          2: markup.raw.inline.xit markup.italic markup.other.tag.value.xit
+
+  - match: '.*'
+    scope: invalid.xit
