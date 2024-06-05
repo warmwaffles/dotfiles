@@ -156,6 +156,21 @@ $(HOME)/.config/nvim/init.lua: $(HOME)/.config/nvim
 	ln -sf $(CWD)/nvim/init.lua $@
 
 #
+#
+# Rofi
+#
+$(HOME)/.config/rofi: $(HOME)/.config
+	mkdir -p $@
+
+ROFI_CONFIGS += $(HOME)/.config/rofi/config.rasi
+$(HOME)/.config/rofi/config.rasi: $(HOME)/.config/rofi
+	ln -sf $(CWD)/rofi/config.rasi $@
+
+ROFI_CONFIGS += $(HOME)/.config/rofi/photon-blue.rasi
+$(HOME)/.config/rofi/photon-blue.rasi: $(HOME)/.config/rofi
+	ln -sf $(CWD)/rofi/photon-blue.rasi $@
+
+#
 # Bat
 #
 
@@ -231,6 +246,7 @@ CONFIGS += $(GIT_CONFIGS)
 CONFIGS += $(KITTY_CONFIGS)
 CONFIGS += $(NEOVIM_CONFIGS)
 CONFIGS += $(PACKAGE_CONFIGS)
+CONFIGS += $(ROFI_CONFIGS)
 CONFIGS += $(SCRIPTS)
 
 install: $(CONFIGS)
@@ -246,4 +262,5 @@ uninstall:
 	rm -f $(KITTY_CONFIGS)
 	rm -f $(NEOVIM_CONFIGS)
 	rm -f $(PACKAGE_CONFIGS)
+	rm -f $(ROFI_CONFIGS)
 	rm -f $(SCRIPTS)

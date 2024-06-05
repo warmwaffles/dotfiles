@@ -1,0 +1,12 @@
+configuration {
+    font: "Berkeley Mono 12";
+    show-icons: false;
+    display-window: "Window";
+    display-drun: "Search";
+}
+
+@theme "photon-blue"
+
+listview {
+    lines: 12;
+}
