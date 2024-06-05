@@ -7,7 +7,6 @@
     color = true
 
 [core]
-    editor = vim
     excludesfile = ~/.gitignore
 
 [color]
