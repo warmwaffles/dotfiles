@@ -78,7 +78,7 @@ set -xg EDITOR nvim
 set -xg BROWSER x-www-browser:chromium
 set -xg KERL_BUILD_DOCS yes
 set -xg KUBE_EDITOR "nvim"
-set -xg TERM xterm
+set -xg TERM screen-256color
 set -xg SXHKD_SHELL sh
 set -xg GNUPGHOME /home/warmwaffles/.gnupg
 set -xg _JAVA_AWT_WM_NONREPARENTING 1
