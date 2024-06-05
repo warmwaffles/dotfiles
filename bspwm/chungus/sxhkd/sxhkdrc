@@ -163,9 +163,6 @@ super + ctrl + Return
 super + space
   rofi -show run
 
-super + F11
-  1password
-
 XF86AudioMute
   amixer set Master 1+ toggle
 
@@ -192,9 +189,6 @@ super + KP_Subtract
 
 super + F12
   pcmanfm
-
-XF86Mail
-  claws-mail
 
 super + ctrl + 4
   ksnip -m
