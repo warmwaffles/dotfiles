@@ -58,6 +58,5 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|htts://|http://|news:|
 
 [keyboard]
 bindings = [
-    {key = "T", mods = "Control|Shift", action = "CreateNewWindow"},
-    {key = "Q", mods = "Control", action = "Quit"},
+    {key = "T", mods = "Control|Shift", action = "CreateNewWindow"}
 ]
