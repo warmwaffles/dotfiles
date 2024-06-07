@@ -163,6 +163,9 @@ super + ctrl + Return
 super + space
   rofi -show run
 
+XF86Tools
+  spotify
+
 XF86AudioMute
   amixer set Master 1+ toggle
 
