@@ -155,24 +155,6 @@ $(HOME)/.config/rofi/photon-blue.rasi: $(HOME)/.config/rofi
 	ln -sf $(CWD)/rofi/photon-blue.rasi $@
 
 #
-# Bat
-#
-
-$(HOME)/.config/bat: $(HOME)/.config
-	mkdir -p $@
-
-$(HOME)/.config/bat/syntaxes: $(HOME)/.config/bat
-	mkdir -p $@
-
-BAT_CONFIGS += $(HOME)/.config/bat/config
-$(HOME)/.config/bat/config: $(HOME)/.config/bat
-	ln -sf $(CWD)/bat/config $@
-
-BAT_CONFIGS += $(HOME)/.config/bat/syntaxes/xit.sublime-syntax
-$(HOME)/.config/bat/syntaxes/xit.sublime-syntax: $(HOME)/.config/bat/syntaxes
-	ln -sf $(CWD)/bat/syntaxes/xit.sublime-syntax $@
-
-#
 # Packages
 #
 
@@ -221,7 +203,6 @@ $(HOME)/.local/bin/k3s-killall.sh: $(HOME)/.local/bin
 
 # Please keep this in alphabetical order. It makes life easier.
 CONFIGS += $(ALACRITTY_CONFIGS)
-CONFIGS += $(BAT_CONFIGS)
 CONFIGS += $(BSPWM_CONFIGS)
 CONFIGS += $(DUNST_CONFIGS)
 CONFIGS += $(FISH_CONFIGS)
@@ -233,13 +214,13 @@ CONFIGS += $(ROFI_CONFIGS)
 CONFIGS += $(SCRIPTS)
 
 install: $(CONFIGS)
+	stow --target $(HOME) bat
 	stow --target $(HOME) nvim
 	stow --target $(HOME) vim
 	stow --target $(HOME) zellij
 
 uninstall:
 	rm -f $(ALACRITTY_CONFIGS)
-	rm -f $(BAT_CONFIGS)
 	rm -f $(BSPWM_CONFIGS)
 	rm -f $(DUNST_CONFIGS)
 	rm -f $(FISH_CONFIGS)
