@@ -104,17 +104,6 @@ $(HOME)/.config/fish/config.fish: $(HOME)/.config/fish
 	ln -sf $(CWD)/fish/config.fish $@
 
 #
-# Kitty
-#
-
-$(HOME)/.config/kitty: $(HOME)/.config
-	mkdir -p $@
-
-KITTY_CONFIGS += $(HOME)/.config/kitty/kitty.conf
-$(HOME)/.config/kitty/kitty.conf:
-	ln -sf $(CWD)/kitty/kitty.conf $@
-
-#
 # Scripts
 #
 
@@ -155,7 +144,6 @@ CONFIGS += $(BSPWM_CONFIGS)
 CONFIGS += $(FISH_CONFIGS)
 CONFIGS += $(GENERAL_CONFIGS)
 CONFIGS += $(GIT_CONFIGS)
-CONFIGS += $(KITTY_CONFIGS)
 CONFIGS += $(PACKAGE_CONFIGS)
 CONFIGS += $(SCRIPTS)
 
@@ -174,6 +162,5 @@ uninstall:
 	rm -f $(FISH_CONFIGS)
 	rm -f $(GENERAL_CONFIGS)
 	rm -f $(GIT_CONFIGS)
-	rm -f $(KITTY_CONFIGS)
 	rm -f $(PACKAGE_CONFIGS)
 	rm -f $(SCRIPTS)
