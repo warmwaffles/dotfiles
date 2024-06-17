@@ -52,47 +52,6 @@ $(HOME)/.tool-versions:
 	ln -sf $(CWD)/tool-versions $@
 
 #
-# BSPWM
-#
-
-$(HOME)/.config/bspwm:
-	mkdir -p $@
-
-$(HOME)/.config/bspwm/polybar:
-	mkdir -p $@
-
-$(HOME)/.config/bspwm/sxhkd:
-	mkdir -p $@
-
-BSPWM_CONFIGS += $(HOME)/.config/bspwm/polybar/config.ini
-$(HOME)/.config/bspwm/polybar/config.ini: $(HOME)/.config/bspwm/polybar
-	ln -sf $(CWD)/bspwm/$(HOSTNAME)/polybar/config.ini $@
-
-BSPWM_CONFIGS += $(HOME)/.config/bspwm/polybar/reload.sh
-$(HOME)/.config/bspwm/polybar/reload.sh: $(HOME)/.config/bspwm/polybar
-	ln -sf $(CWD)/bspwm/$(HOSTNAME)/polybar/reload.sh $@
-
-BSPWM_CONFIGS += $(HOME)/.config/bspwm/sxhkd/launch.sh
-$(HOME)/.config/bspwm/sxhkd/launch.sh: $(HOME)/.config/bspwm/sxhkd
-	ln -sf $(CWD)/bspwm/$(HOSTNAME)/sxhkd/launch.sh $@
-
-BSPWM_CONFIGS += $(HOME)/.config/bspwm/sxhkd/reload.sh
-$(HOME)/.config/bspwm/sxhkd/reload.sh: $(HOME)/.config/bspwm/sxhkd
-	ln -sf $(CWD)/bspwm/$(HOSTNAME)/sxhkd/reload.sh $@
-
-BSPWM_CONFIGS += $(HOME)/.config/bspwm/sxhkd/sxhkdrc
-$(HOME)/.config/bspwm/sxhkd/sxhkdrc: $(HOME)/.config/bspwm/sxhkd
-	ln -sf $(CWD)/bspwm/$(HOSTNAME)/sxhkd/sxhkdrc $@
-
-BSPWM_CONFIGS += $(HOME)/.config/bspwm/bspwmrc
-$(HOME)/.config/bspwm/bspwmrc: $(HOME)/.config/bspwm
-	ln -sf $(CWD)/bspwm/$(HOSTNAME)/bspwmrc $@
-
-BSPWM_CONFIGS += $(HOME)/.config/bspwm/reload.sh
-$(HOME)/.config/bspwm/reload.sh: $(HOME)/.config/bspwm
-	ln -sf $(CWD)/bspwm/reload.sh $@
-
-#
 # Scripts
 #
 
@@ -129,7 +88,6 @@ $(HOME)/.local/bin/k3s-killall.sh: $(HOME)/.local/bin
 #
 
 # Please keep this in alphabetical order. It makes life easier.
-CONFIGS += $(BSPWM_CONFIGS)
 CONFIGS += $(GENERAL_CONFIGS)
 CONFIGS += $(GIT_CONFIGS)
 CONFIGS += $(PACKAGE_CONFIGS)
@@ -138,6 +96,7 @@ CONFIGS += $(SCRIPTS)
 install: $(CONFIGS)
 	stow --target $(HOME) alacritty
 	stow --target $(HOME) bat
+	stow --target $(HOME) bspwm
 	stow --target $(HOME) dunst
 	stow --target $(HOME) fish
 	stow --target $(HOME) nvim
@@ -147,7 +106,6 @@ install: $(CONFIGS)
 	stow --target $(HOME) zellij
 
 uninstall:
-	rm -f $(BSPWM_CONFIGS)
 	rm -f $(GENERAL_CONFIGS)
 	rm -f $(GIT_CONFIGS)
 	rm -f $(PACKAGE_CONFIGS)
