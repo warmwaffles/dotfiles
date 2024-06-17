@@ -51,10 +51,6 @@ GENERAL_CONFIGS += $(HOME)/.tool-versions
 $(HOME)/.tool-versions:
 	ln -sf $(CWD)/tool-versions $@
 
-GENERAL_CONFIGS += $(HOME)/.vimrc
-$(HOME)/.vimrc:
-	ln -sf $(CWD)/vimrc $@
-
 #
 # BSPWM
 #
@@ -252,6 +248,7 @@ CONFIGS += $(ZELLIJ_CONFIG)
 
 install: $(CONFIGS)
 	stow --target $(HOME) nvim
+	stow --target $(HOME) vim
 
 uninstall:
 	rm -f $(ALACRITTY_CONFIGS)
