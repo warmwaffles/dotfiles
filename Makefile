@@ -141,19 +141,6 @@ $(HOME)/.config/alacritty/alacritty.toml: $(HOME)/.config/alacritty
 	ln -sf $(CWD)/alacritty/alacritty.toml $@
 
 #
-
-#
-#
-# Zellij
-#
-$(HOME)/.config/zellij: $(HOME)/.config
-	mkdir -p $@
-
-ZELLIJ_CONFIG += $(HOME)/.config/zellij/config.kdl
-$(HOME)/.config/zellij/config.kdl: $(HOME)/.config/zellij
-	ln -sf $(CWD)/zellij/config.kdl $@
-
-#
 # Rofi
 #
 $(HOME)/.config/rofi: $(HOME)/.config
@@ -244,11 +231,11 @@ CONFIGS += $(KITTY_CONFIGS)
 CONFIGS += $(PACKAGE_CONFIGS)
 CONFIGS += $(ROFI_CONFIGS)
 CONFIGS += $(SCRIPTS)
-CONFIGS += $(ZELLIJ_CONFIG)
 
 install: $(CONFIGS)
 	stow --target $(HOME) nvim
 	stow --target $(HOME) vim
+	stow --target $(HOME) zellij
 
 uninstall:
 	rm -f $(ALACRITTY_CONFIGS)
@@ -262,4 +249,3 @@ uninstall:
 	rm -f $(PACKAGE_CONFIGS)
 	rm -f $(ROFI_CONFIGS)
 	rm -f $(SCRIPTS)
-	rm -f $(ZELLIJ_CONFIG)
