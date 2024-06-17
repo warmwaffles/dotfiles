@@ -8,22 +8,6 @@ $(HOME)/.config:
 	mkdir -p $@
 
 #
-# Git Config
-#
-
-GIT_CONFIGS += $(HOME)/.gitattributes
-$(HOME)/.gitattributes:
-	ln -sf $(CWD)/gitattributes $@
-
-GIT_CONFIGS += $(HOME)/.gitconfig
-$(HOME)/.gitconfig:
-	ln -sf $(CWD)/gitconfig $@
-
-GIT_CONFIGS += $(HOME)/.gitignore
-$(HOME)/.gitignore:
-	ln -sf $(CWD)/gitignore $@
-
-#
 # General Configs
 #
 
@@ -89,7 +73,6 @@ $(HOME)/.local/bin/k3s-killall.sh: $(HOME)/.local/bin
 
 # Please keep this in alphabetical order. It makes life easier.
 CONFIGS += $(GENERAL_CONFIGS)
-CONFIGS += $(GIT_CONFIGS)
 CONFIGS += $(PACKAGE_CONFIGS)
 CONFIGS += $(SCRIPTS)
 
@@ -98,6 +81,7 @@ install: $(CONFIGS)
 	stow --target $(HOME) bat
 	stow --target $(HOME) bspwm
 	stow --target $(HOME) dunst
+	stow --target $(HOME) git
 	stow --target $(HOME) fish
 	stow --target $(HOME) nvim
 	stow --target $(HOME) paru
@@ -107,6 +91,5 @@ install: $(CONFIGS)
 
 uninstall:
 	rm -f $(GENERAL_CONFIGS)
-	rm -f $(GIT_CONFIGS)
 	rm -f $(PACKAGE_CONFIGS)
 	rm -f $(SCRIPTS)
