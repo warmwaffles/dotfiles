@@ -1,3 +1,6 @@
+[env]
+TERM = "xterm-256color"
+
 [colors.primary]
 background = '#f9f9f9'
 foreground = '#373a41'
@@ -35,6 +38,7 @@ normal.family = "Berkeley Mono"
 bold.family = "Berkeley Mono"
 italic.family = "Berkeley Mono"
 bold_italic.family = "Berkeley Mono"
+offset = {x = 0, y = 0}
 
 size = 14.0
 
