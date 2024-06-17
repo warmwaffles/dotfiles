@@ -144,17 +144,6 @@ $(HOME)/.config/rofi/photon-blue.rasi: $(HOME)/.config/rofi
 	ln -sf $(CWD)/rofi/photon-blue.rasi $@
 
 #
-# Packages
-#
-
-$(HOME)/.config/paru: $(HOME)/.config
-	mkdir -p $@
-
-PACKAGE_CONFIGS += $(HOME)/.config/paru/paru.conf
-$(HOME)/.config/paru/paru.conf: $(HOME)/.config/paru
-	ln -sf $(CWD)/paru/paru.conf $@
-
-#
 # Scripts
 #
 
@@ -205,6 +194,7 @@ install: $(CONFIGS)
 	stow --target $(HOME) alacritty
 	stow --target $(HOME) bat
 	stow --target $(HOME) nvim
+	stow --target $(HOME) paru
 	stow --target $(HOME) vim
 	stow --target $(HOME) zellij
 
