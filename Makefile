@@ -104,21 +104,6 @@ $(HOME)/.config/fish/config.fish: $(HOME)/.config/fish
 	ln -sf $(CWD)/fish/config.fish $@
 
 #
-# Dunst
-#
-
-$(HOME)/.config/dunst:
-	mkdir -p $@
-
-DUNST_CONFIGS += $(HOME)/.config/dunst/dunstrc
-$(HOME)/.config/dunst/dunstrc: $(HOME)/.config/dunst
-	ln -sf $(CWD)/dunst/dunstrc $@
-
-DUNST_CONFIGS += $(HOME)/.config/dunst/colortest
-$(HOME)/.config/dunst/colortest: $(HOME)/.config/dunst
-	ln -sf $(CWD)/dunst/colortest $@
-
-#
 # Kitty
 #
 
@@ -181,7 +166,6 @@ $(HOME)/.local/bin/k3s-killall.sh: $(HOME)/.local/bin
 
 # Please keep this in alphabetical order. It makes life easier.
 CONFIGS += $(BSPWM_CONFIGS)
-CONFIGS += $(DUNST_CONFIGS)
 CONFIGS += $(FISH_CONFIGS)
 CONFIGS += $(GENERAL_CONFIGS)
 CONFIGS += $(GIT_CONFIGS)
@@ -193,6 +177,7 @@ CONFIGS += $(SCRIPTS)
 install: $(CONFIGS)
 	stow --target $(HOME) alacritty
 	stow --target $(HOME) bat
+	stow --target $(HOME) dunst
 	stow --target $(HOME) nvim
 	stow --target $(HOME) paru
 	stow --target $(HOME) vim
@@ -200,7 +185,6 @@ install: $(CONFIGS)
 
 uninstall:
 	rm -f $(BSPWM_CONFIGS)
-	rm -f $(DUNST_CONFIGS)
 	rm -f $(FISH_CONFIGS)
 	rm -f $(GENERAL_CONFIGS)
 	rm -f $(GIT_CONFIGS)
