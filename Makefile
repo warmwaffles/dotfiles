@@ -130,17 +130,6 @@ $(HOME)/.config/kitty/kitty.conf:
 	ln -sf $(CWD)/kitty/kitty.conf $@
 
 #
-# Alacritty
-#
-
-$(HOME)/.config/alacritty: $(HOME)/.config
-	mkdir -p $@
-
-ALACRITTY_CONFIGS += $(HOME)/.config/alacritty/alacritty.toml
-$(HOME)/.config/alacritty/alacritty.toml: $(HOME)/.config/alacritty
-	ln -sf $(CWD)/alacritty/alacritty.toml $@
-
-#
 # Rofi
 #
 $(HOME)/.config/rofi: $(HOME)/.config
@@ -202,7 +191,6 @@ $(HOME)/.local/bin/k3s-killall.sh: $(HOME)/.local/bin
 #
 
 # Please keep this in alphabetical order. It makes life easier.
-CONFIGS += $(ALACRITTY_CONFIGS)
 CONFIGS += $(BSPWM_CONFIGS)
 CONFIGS += $(DUNST_CONFIGS)
 CONFIGS += $(FISH_CONFIGS)
@@ -214,13 +202,13 @@ CONFIGS += $(ROFI_CONFIGS)
 CONFIGS += $(SCRIPTS)
 
 install: $(CONFIGS)
+	stow --target $(HOME) alacritty
 	stow --target $(HOME) bat
 	stow --target $(HOME) nvim
 	stow --target $(HOME) vim
 	stow --target $(HOME) zellij
 
 uninstall:
-	rm -f $(ALACRITTY_CONFIGS)
 	rm -f $(BSPWM_CONFIGS)
 	rm -f $(DUNST_CONFIGS)
 	rm -f $(FISH_CONFIGS)
