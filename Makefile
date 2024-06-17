@@ -145,15 +145,6 @@ $(HOME)/.config/alacritty/alacritty.toml: $(HOME)/.config/alacritty
 	ln -sf $(CWD)/alacritty/alacritty.toml $@
 
 #
-# NVim
-#
-
-$(HOME)/.config/nvim: $(HOME)/.config
-	mkdir -p $@
-
-NEOVIM_CONFIGS += $(HOME)/.config/nvim/init.lua
-$(HOME)/.config/nvim/init.lua: $(HOME)/.config/nvim
-	ln -sf $(CWD)/nvim/init.lua $@
 
 #
 #
@@ -254,13 +245,13 @@ CONFIGS += $(FISH_CONFIGS)
 CONFIGS += $(GENERAL_CONFIGS)
 CONFIGS += $(GIT_CONFIGS)
 CONFIGS += $(KITTY_CONFIGS)
-CONFIGS += $(NEOVIM_CONFIGS)
 CONFIGS += $(PACKAGE_CONFIGS)
 CONFIGS += $(ROFI_CONFIGS)
 CONFIGS += $(SCRIPTS)
 CONFIGS += $(ZELLIJ_CONFIG)
 
 install: $(CONFIGS)
+	stow --target $(HOME) nvim
 
 uninstall:
 	rm -f $(ALACRITTY_CONFIGS)
@@ -271,7 +262,6 @@ uninstall:
 	rm -f $(GENERAL_CONFIGS)
 	rm -f $(GIT_CONFIGS)
 	rm -f $(KITTY_CONFIGS)
-	rm -f $(NEOVIM_CONFIGS)
 	rm -f $(PACKAGE_CONFIGS)
 	rm -f $(ROFI_CONFIGS)
 	rm -f $(SCRIPTS)
