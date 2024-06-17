@@ -93,17 +93,6 @@ $(HOME)/.config/bspwm/reload.sh: $(HOME)/.config/bspwm
 	ln -sf $(CWD)/bspwm/reload.sh $@
 
 #
-# Fish
-#
-
-$(HOME)/.config/fish:
-	mkdir -p $@
-
-FISH_CONFIGS += $(HOME)/.config/fish/config.fish
-$(HOME)/.config/fish/config.fish: $(HOME)/.config/fish
-	ln -sf $(CWD)/fish/config.fish $@
-
-#
 # Scripts
 #
 
@@ -141,7 +130,6 @@ $(HOME)/.local/bin/k3s-killall.sh: $(HOME)/.local/bin
 
 # Please keep this in alphabetical order. It makes life easier.
 CONFIGS += $(BSPWM_CONFIGS)
-CONFIGS += $(FISH_CONFIGS)
 CONFIGS += $(GENERAL_CONFIGS)
 CONFIGS += $(GIT_CONFIGS)
 CONFIGS += $(PACKAGE_CONFIGS)
@@ -151,6 +139,7 @@ install: $(CONFIGS)
 	stow --target $(HOME) alacritty
 	stow --target $(HOME) bat
 	stow --target $(HOME) dunst
+	stow --target $(HOME) fish
 	stow --target $(HOME) nvim
 	stow --target $(HOME) paru
 	stow --target $(HOME) rofi
@@ -159,7 +148,6 @@ install: $(CONFIGS)
 
 uninstall:
 	rm -f $(BSPWM_CONFIGS)
-	rm -f $(FISH_CONFIGS)
 	rm -f $(GENERAL_CONFIGS)
 	rm -f $(GIT_CONFIGS)
 	rm -f $(PACKAGE_CONFIGS)
