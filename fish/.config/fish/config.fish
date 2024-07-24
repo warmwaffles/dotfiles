@@ -56,9 +56,10 @@ set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
 
 function fish_prompt --description 'Write out the prompt'
-    set -l home_escaped (echo -n $HOME | sed 's/\//\\\\\//g')
-    set -l pwd (echo -n $PWD | sed "s/^$home_escaped/~/" | sed 's/ /%20/g')
+    set -l pwd (printf "%s%s%s" (set_color $fish_color_cwd) (prompt_pwd -D 2) (set_color normal))
     set -l prompt_symbol ''
+    set -l time (printf "%s%s%s" (set_color green) (date +%H:%M) (set_color normal))
+    set -l username (printf "%s%s%s" (set_color red) $USER (set_color normal))
 
     switch "$USER"
     case root toor
@@ -67,7 +68,7 @@ function fish_prompt --description 'Write out the prompt'
         set prompt_symbol '$'
     end
 
-    printf "[%s%s%s@%s%s%s]%s%s " (set_color red) $USER (set_color normal) (set_color $fish_color_cwd) $pwd (set_color normal) $prompt_symbol (__fish_git_prompt)
+    printf "%s [%s@%s]%s%s " $time $username $pwd $prompt_symbol (__fish_git_prompt)
 end
 
 #
