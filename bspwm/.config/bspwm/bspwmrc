@@ -48,6 +48,7 @@ bspc monitor DisplayPort-2 --reset-desktops desktop-0 desktop-1 desktop-2 deskto
 
 # RULES
 bspc rule -a Zoom state=floating center=on
+bspc rule -a zoom state=floating center=on
 bspc rule -a ksnip state=floating center=on
 bspc rule -a SpeedCrunch state=floating
 bspc rule -a copyq state=floating
