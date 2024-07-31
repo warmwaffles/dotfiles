@@ -43,17 +43,34 @@ set -g fish_pager_color_completion 575F66
 set -g fish_pager_color_description ABB0B6
 
 # fish git prompt
+set __fish_git_prompt_show_informative_status 'yes'
+
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
+set __fish_git_prompt_showuntrackedfiles 'yes'
 set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_color_branch yellow
+set __fish_git_prompt_color_branch green
+set __fish_git_prompt_color_dirtystate yellow
+set __fish_git_prompt_color_merging red
+set __fish_git_prompt_color_stagedstate green
+set __fish_git_prompt_color_stashstate blue
+set __fish_git_prompt_color_upstream_ahead yellow
+set __fish_git_prompt_color_upstream_behind yellow
 
 # Status Chars
-set __fish_git_prompt_char_dirtystate 'x'
-set __fish_git_prompt_char_stagedstate '→'
-set __fish_git_prompt_char_stashstate '↩'
-set __fish_git_prompt_char_upstream_ahead '↑'
-set __fish_git_prompt_char_upstream_behind '↓'
+set __fish_git_prompt_char_cleanstate '✔'
+set __fish_git_prompt_char_dirtystate '𝚫'
+set __fish_git_prompt_char_invalidstate 'x'
+set __fish_git_prompt_char_stagedstate '●'
+set __fish_git_prompt_char_untrackedfiles '+'
+set __fish_git_prompt_char_upstream_prefix ""
+set __fish_git_prompt_char_upstream_equal ""
+set __fish_git_prompt_char_upstream_behind '⬇ '
+set __fish_git_prompt_char_upstream_ahead '⬆ '
+set __fish_git_prompt_char_upstream_diverged '⬆⬇'
+set __fish_git_prompt_char_stateseparator ' '
+set __fish_git_prompt_char_conflictedstate "✖"
+
 
 function fish_prompt --description 'Write out the prompt'
     set -l pwd (printf "%s%s%s" (set_color $fish_color_cwd) (prompt_pwd -D 2) (set_color normal))
