@@ -45,10 +45,11 @@ set -g fish_pager_color_description ABB0B6
 # fish git prompt
 set __fish_git_prompt_show_informative_status 'yes'
 
+set __fish_git_prompt_describe_style 'branch'
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
 set __fish_git_prompt_showuntrackedfiles 'yes'
-set __fish_git_prompt_showupstream 'yes'
+set __fish_git_prompt_showupstream 'auto'
 set __fish_git_prompt_color_branch green
 set __fish_git_prompt_color_dirtystate yellow
 set __fish_git_prompt_color_merging red
@@ -68,8 +69,8 @@ set __fish_git_prompt_char_upstream_equal ""
 set __fish_git_prompt_char_upstream_behind '⬇ '
 set __fish_git_prompt_char_upstream_ahead '⬆ '
 set __fish_git_prompt_char_upstream_diverged '⬆⬇'
-set __fish_git_prompt_char_stateseparator ' '
-set __fish_git_prompt_char_conflictedstate "✖"
+set __fish_git_prompt_char_stateseparator ''
+set __fish_git_prompt_char_conflictedstate "x"
 
 
 function fish_prompt --description 'Write out the prompt'
