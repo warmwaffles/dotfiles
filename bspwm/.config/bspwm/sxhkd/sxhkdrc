@@ -125,7 +125,7 @@ super + shift + Escape
 
 # Insert a desktop
 super + Insert
-  ~/.local/bin/add-desktop
+  bspc monitor -a $(printf "desktop-%s" $(bspc query -m -D | wc -l))
 
 # Remove the last desktop
 super + Delete

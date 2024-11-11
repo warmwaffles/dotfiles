@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# A utility to add a desktop to the current active monitor.
-
-bspc monitor -a $(printf "desktop-%s" bspc query -m -D | wc -l)

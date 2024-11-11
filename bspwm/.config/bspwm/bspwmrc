@@ -37,14 +37,10 @@ bspc config presel_feedback_color "#6272a4"
 bspc config active_border_color "#6272a4"
 bspc config focused_border_color "#8be9fd"
 
-# LEFT MONITOR
-bspc monitor DisplayPort-0 --reset-desktops desktop-0 desktop-1 desktop-2 desktop-3 desktop-4 desktop-5
-
-# CENTER MONITOR
-bspc monitor DisplayPort-1 --reset-desktops desktop-0 desktop-1 desktop-2 desktop-3 desktop-4 desktop-5
-
-# RIGHT MONITOR
-bspc monitor DisplayPort-2 --reset-desktops desktop-0 desktop-1 desktop-2 desktop-3 desktop-4 desktop-5
+# Monitors
+for monitor in $(bspc query -M --names); do
+    bspc monitor "$monitor" -d desktop-0 desktop-1 desktop-2 desktop-3 desktop-4 desktop-5
+done
 
 # RULES
 bspc rule -a Zoom state=floating center=on focus=off
