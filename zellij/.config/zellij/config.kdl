@@ -261,24 +261,38 @@ session_serialization false
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
 themes {
-    main {
-        fg "#6D7281"
+    // Bastardized form. Needs work.
+    bluloco {
         bg "#F9F9F9"
-        red "#D52753"
-        green "#23974A"
-        yellow "#C5A332"
+        black "#E5E9F0"
         blue "#0098DD"
+        cyan "#26608c"
+        fg "#383A42"
+        green "#23974A"
         magenta "#CE33C0"
         orange "#DF631C"
-        cyan "#26608c"
-        black "#E5E9F0"
+        red "#D52753"
         white "#A0A1A7"
+        yellow "#C5A332"
+    }
+    nord {
+        bg "#2E3440"
+        black "#3B4252"
+        blue "#81A1C1"
+        cyan "#88C0D0"
+        fg "#D8DEE9"
+        green "#A3BE8C"
+        magenta "#B48EAD"
+        orange "#D08770"
+        red "#BF616A"
+        white "#E5E9F0"
+        yellow "#EBCB8B"
     }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
-theme "main"
+theme "nord"
 
 // The name of the default layout to load on startup
 // Default: "default"
@@ -297,7 +311,7 @@ theme "main"
 //   - true (default)
 //   - false
 //
-mouse_mode false
+mouse_mode true
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
