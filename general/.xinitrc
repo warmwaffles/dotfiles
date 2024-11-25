@@ -34,6 +34,14 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# Failing to build Erlang OTP on arch
+#
+# This is a "hack" and no clue how to really work around this issue,
+# other than setting this here.
+#
+# See: https://github.com/asdf-vm/asdf-erlang/issues/286#issuecomment-2093563063
+export KERL_CONFIGURE_OPTIONS="--without-javac --with-odbc=/var/lib/pacman/local/unixodbc-$(pacman -Q unixodbc | cut -d' ' -f2)"
+
 # For VSCode Keychain Issues
 # see https://unix.stackexchange.com/a/295652/332452
 source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
