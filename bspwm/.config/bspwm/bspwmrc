@@ -7,9 +7,17 @@ fi
 
 # (re)load polybar
 if hash polybar >/dev/null 2>&1; then
-    polybar -c "$HOME/.config/bspwm/polybar/config.ini" left &
-    polybar -c "$HOME/.config/bspwm/polybar/config.ini" center &
-    polybar -c "$HOME/.config/bspwm/polybar/config.ini" right &
+    case $(hostname) in
+      chungus)
+        polybar -c "$HOME/.config/bspwm/polybar/config.ini" left &
+        polybar -c "$HOME/.config/bspwm/polybar/config.ini" center &
+        polybar -c "$HOME/.config/bspwm/polybar/config.ini" right &
+        ;;
+
+      thinkboi)
+        polybar -c "$HOME/.config/bspwm/polybar/config.ini" thinkboi &
+        ;;
+    esac
 fi
 
 # Make java stop trying to reparent shit when this is not
