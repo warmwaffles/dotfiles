@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "500x5-50+50"
+    geometry = "800x5-50+50"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -85,7 +85,7 @@
 
     ### Text ###
 
-    font = "Inconsolata, 15"
+    font = "Berkeley Mono, 15"
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -245,23 +245,23 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#282936"
-    foreground = "#f8f8f8"
+    background = "#f9f9f9"
+    foreground = "#373a41"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#282936"
-    foreground = "#f8f8f8"
+    background = "#f9f9f9"
+    foreground = "#373a41"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#ab4642"
-    foreground = "#ffffff"
-    frame_color = "#ff0000"
+    background = "#ff637f"
+    foreground = "#373a41"
+    frame_color = "#d52652"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
@@ -325,7 +325,7 @@
 #
 
 [filesystem]
-    background="#282936"
+    background="#f9f9f9"
     category="filesystem"
 
 # vim: ft=cfg

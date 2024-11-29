@@ -8,4 +8,7 @@ polybar-msg cmd restart
 
 xrdb -load ~/.Xresources
 
+# Reload dunst
+pkill dunst
+
 notify-send "Reloaded sxhkd and polybar"

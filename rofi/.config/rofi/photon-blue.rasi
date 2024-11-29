@@ -6,11 +6,11 @@
  ********************************************************/
 
 * {
-    bg:           #fafafa;
-    bg-border:    #f3f3f3;
-    fg:           #5a5a5a;
-    accent-bg:    #81d0ff;
-    accent-fg:    #ffffff;
+    bg:           #f9f9f9;
+    bg-border:    #275fe4;
+    fg:           #373a41;
+    accent-bg:    #daf0ff;
+    accent-fg:    #373a41;
 
     spacing:          10;
 
