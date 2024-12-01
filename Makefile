@@ -18,6 +18,7 @@ install:
 	stow --target $(HOME) -S scripts
 	stow --target $(HOME) -S vim
 	stow --target $(HOME) -S zellij
+	stow --target $(HOME) -S theme
 
 uninstall:
 	stow --target $(HOME) -D alacritty
@@ -36,3 +37,4 @@ uninstall:
 	stow --target $(HOME) -D scripts
 	stow --target $(HOME) -D vim
 	stow --target $(HOME) -D zellij
+	stow --target $(HOME) -D theme

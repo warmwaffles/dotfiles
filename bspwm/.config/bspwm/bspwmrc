@@ -20,6 +20,7 @@ if hash polybar >/dev/null 2>&1; then
     esac
 fi
 
+read -r THEME < ~/.config/theme
 
 export XDG_CURRENT_DESKTOP='bspwm'
 
