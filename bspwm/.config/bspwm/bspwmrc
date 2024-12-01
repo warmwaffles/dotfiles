@@ -20,6 +20,9 @@ if hash polybar >/dev/null 2>&1; then
     esac
 fi
 
+
+export XDG_CURRENT_DESKTOP='bspwm'
+
 # Make java stop trying to reparent shit when this is not
 # a parenting WM
 export _JAVA_AWT_WM_NONREPARENTING=1
