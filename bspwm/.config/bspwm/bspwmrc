@@ -58,3 +58,6 @@ bspc rule -a zoom state=floating center=on focus=off
 bspc rule -a ksnip state=floating center=on
 bspc rule -a SpeedCrunch state=floating
 bspc rule -a copyq state=floating
+
+# Background Color
+hsetroot -solid "#373a41"
