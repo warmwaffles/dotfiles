@@ -727,7 +727,7 @@ require("lazy").setup({
         -- change the command in the config to whatever the name of that colorscheme is.
         --
         -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-        "uloco/bluloco.nvim",
+        "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000, -- Make sure to load this before all the other start plugins.
         dependencies = { "rktjmp/lush.nvim" },
@@ -735,7 +735,7 @@ require("lazy").setup({
             -- Load the colorscheme here.
             -- Like many other themes, this one has different styles, and you could load
             -- any other, such as 'bluloco-light' or 'bluloco-dark'.
-            vim.cmd.colorscheme("bluloco-light")
+            vim.cmd.colorscheme("tokyonight-moon")
 
             -- You can configure highlights by doing something like:
             vim.cmd.hi("Comment gui=none")

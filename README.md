@@ -13,3 +13,8 @@ make install
 ```
 make uninstall
 ```
+
+## Theme
+
+Currently I am using https://github.com/folke/tokyonight.nvim specifically
+Tokyo Night Moon.

@@ -1,46 +1,41 @@
 # Disable fish greeting
 set -g fish_greeting ""
 
-# Dracula Color Palette
-set -l foreground 383a42
-set -l selection 44475a
-set -l comment a0a1a7
-set -l red d52753
-set -l orange df631c
-set -l yellow df631c
-set -l green 23974a
-set -l purple 823ff1
-set -l cyan 27618d
-set -l pink ce33c0
+# TokyoNight Color Palette
+set -l foreground c8d3f5
+set -l selection 2d3f76
+set -l comment 636da6
+set -l red ff757f
+set -l orange ff966c
+set -l yellow ffc777
+set -l green c3e88d
+set -l purple fca7ea
+set -l cyan 86e1fc
+set -l pink c099ff
 
 # Syntax Highlighting Colors
-set -g fish_color_autosuggestion 8A9199
-set -g fish_color_command        55B4D4
-set -g fish_color_comment        ABB0B6
-set -g fish_color_cwd            399EE6
-set -g fish_color_end            ED9366
-set -g fish_color_error          F51818
-set -g fish_color_escape         4CBF99
-set -g fish_color_match          F07171
-set -g fish_color_normal         575F66
-set -g fish_color_operator       FF9940
-set -g fish_color_param          575F66
-set -g fish_color_quote          86B300
-set -g fish_color_redirection    A37ACC
-set -g fish_color_search_match --background FF9940
-set -g fish_color_selection      FF9940
-
-# color for fish default prompts item
-set -g fish_color_cancel      FAFAFA
-set -g fish_color_host        A37ACC
-set -g fish_color_host_remote A37ACC
-set -g fish_color_user        FA8D3E
+set -g fish_color_normal $foreground
+set -g fish_color_command $cyan
+set -g fish_color_keyword $pink
+set -g fish_color_quote $yellow
+set -g fish_color_redirection $foreground
+set -g fish_color_end $orange
+set -g fish_color_option $pink
+set -g fish_color_error $red
+set -g fish_color_param $purple
+set -g fish_color_comment $comment
+set -g fish_color_selection --background=$selection
+set -g fish_color_search_match --background=$selection
+set -g fish_color_operator $green
+set -g fish_color_escape $pink
+set -g fish_color_autosuggestion $comment
 
 # Completion Pager Colors
-set -g fish_pager_color_progress ABB0B6
-set -g fish_pager_color_prefix 55B4D4
-set -g fish_pager_color_completion 575F66
-set -g fish_pager_color_description ABB0B6
+set -g fish_pager_color_progress $comment
+set -g fish_pager_color_prefix $cyan
+set -g fish_pager_color_completion $foreground
+set -g fish_pager_color_description $comment
+set -g fish_pager_color_selected_background --background=$selection
 
 # fish git prompt
 set __fish_git_prompt_show_informative_status 'yes'

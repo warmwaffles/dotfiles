@@ -1,37 +1,51 @@
 [env]
 TERM = "xterm-256color"
 
+# -----------------------------------------------------------------------------
+# TokyoNight Alacritty Colors
+# Theme: Tokyo Night Moon
+# Upstream: https://github.com/folke/tokyonight.nvim/raw/main/extras/alacritty/tokyonight_moon.toml
+# -----------------------------------------------------------------------------
+
+# Default colors
 [colors.primary]
-background = '#f9f9f9'
-foreground = '#373a41'
+background = '#222436'
+foreground = '#c8d3f5'
 
+# [colors.cursor]
+# cursor = '#c8d3f5'
+# text = '#222436'
+
+# Normal colors
 [colors.normal]
-black   = '#373a41'
-red     = '#d52753'
-green   = '#23974a'
-yellow  = '#df631c'
-blue    = '#275fe4'
-magenta = '#823ff1'
-cyan    = '#27618d'
-white   = '#babbc2'
+black = '#1b1d2b'
+red = '#ff757f'
+green = '#c3e88d'
+yellow = '#ffc777'
+blue = '#82aaff'
+magenta = '#c099ff'
+cyan = '#86e1fc'
+white = '#828bb8'
 
+# Bright colors
 [colors.bright]
-black   = '#676a77'
-blue    = '#0099e1'
-cyan    = '#6d93bb'
-green   = '#3cbc66'
-magenta = '#ce33c0'
-red     = '#ff6480'
-white   = '#d3d3d3'
-yellow  = '#c5a332'
+black = '#444a73'
+red = '#ff8d94'
+green = '#c7fb6d'
+yellow = '#ffd8ab'
+blue = '#9ab8ff'
+magenta = '#caabff'
+cyan = '#b2ebff'
+white = '#c8d3f5'
 
-[colors.cursor]
-cursor = '#f32759'
-text   = '#ffffff'
+# Indexed Colors
+[[colors.indexed_colors]]
+index = 16
+color = '#ff966c'
 
-[colors.selection]
-background = '#daf0ff'
-text       = '#373a41'
+[[colors.indexed_colors]]
+index = 17
+color = '#c53b53'
 
 [font]
 normal.family = "Berkeley Mono"
