@@ -1,6 +1,9 @@
 [env]
 TERM = "xterm-256color"
 
+[terminal.shell]
+program = "fish"
+
 [window]
 decorations = "None"
 
