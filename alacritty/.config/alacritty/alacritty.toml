@@ -76,5 +76,6 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:
 
 [keyboard]
 bindings = [
-    {key = "T", mods = "Control|Shift", action = "CreateNewWindow"}
+    {key = "T", mods = "Control|Shift", action = "CreateNewWindow"},
+    { key = "F11", action = "ToggleFullscreen" }
 ]
