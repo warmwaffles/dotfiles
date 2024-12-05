@@ -1,6 +1,9 @@
 [env]
 TERM = "xterm-256color"
 
+[window]
+decorations = "None"
+
 # -----------------------------------------------------------------------------
 # TokyoNight Alacritty Colors
 # Theme: Tokyo Night Moon
