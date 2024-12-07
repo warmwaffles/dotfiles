@@ -1,14 +1,7 @@
-/********************************************************
-
-  Photon-Blue Theme for Rofi
-  URL: https://github.com/anstellaire/photon-rofi-themes
-
- ********************************************************/
-
 * {
-    bg:           #f9f9f9;
-    bg-border:    #275fe4;
-    fg:           #373a41;
+    bg:           #1e2030;
+    bg-border:    #c8d3f5;
+    fg:           #c8d3f5;
     accent-bg:    #daf0ff;
     accent-fg:    #373a41;
 

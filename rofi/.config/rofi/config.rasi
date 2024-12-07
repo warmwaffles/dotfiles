@@ -5,7 +5,7 @@ configuration {
     display-drun: "Search";
 }
 
-@theme "photon-blue"
+@theme "theme"
 
 listview {
     lines: 12;
