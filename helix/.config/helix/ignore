@@ -1,0 +1,16 @@
+# Useless assets
+*.png
+*.ico
+*.gif
+*.pdf
+*.tif
+*.tiff
+*.jpg
+*.bmp
+
+# font
+*.eot
+*.woff
+*.woff2
+*.otf
+*.ttf

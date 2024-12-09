@@ -1,0 +1,77 @@
+theme = "tokyonight_moon"
+
+[editor]
+line-number = "relative"
+mouse = false
+cursorline = true
+color-modes = true
+rulers = [80,100]
+# This is an annoying feature to me, I want to be in
+# charge of what I punch in. Yea you are saving me a
+# key stroke...sometimes. But often, I'm an idiot and
+# forgot to put parens or quotes while typing and I
+# move back to fix that issue. It's a skill issue that
+# I'm not fixing. Deal with it.
+auto-pairs = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = " "
+nbsp = "⍽"    # Non Breaking SPace
+tab = "→"
+newline = "⏎"
+tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
+
+[editor.indent-guides]
+render = true
+character = "╎"
+skip-levels = 1
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-inlay-hints = true
+
+[keys.normal]
+D = "kill_to_line_end"
+# Shift-l and -h to move through tabs
+S-l = ":buffer-next"
+S-h = ":buffer-previous"
+# Shift the current line up and down
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+# Kill entire line
+C-x = ["extend_to_line_bounds", "delete_selection"]
+# Indent like sublime
+"C-[" = "unindent"
+"C-]" = "indent"
+# Toggle comment
+"C-/" = "toggle_comments"
+# Duplicate current line
+"C-S-d" = ["extend_to_line_bounds", "yank", "paste_after"]
+
+
+[keys.insert]
+# Indent like sublime
+"C-[" = "unindent"
+"C-]" = "indent"
+
+[keys.select]
+"C-/" = "toggle_comments"
