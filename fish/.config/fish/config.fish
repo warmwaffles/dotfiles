@@ -38,13 +38,13 @@ set -g fish_pager_color_description $comment
 set -g fish_pager_color_selected_background --background=$selection
 
 # fish git prompt
-set __fish_git_prompt_show_informative_status 'yes'
+set __fish_git_prompt_show_informative_status yes
 
-set __fish_git_prompt_describe_style 'branch'
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_showstashstate 'yes'
-set __fish_git_prompt_showuntrackedfiles 'yes'
-set __fish_git_prompt_showupstream 'auto'
+set __fish_git_prompt_describe_style branch
+set __fish_git_prompt_showdirtystate yes
+set __fish_git_prompt_showstashstate yes
+set __fish_git_prompt_showuntrackedfiles yes
+set __fish_git_prompt_showupstream auto
 set __fish_git_prompt_color_branch green
 set __fish_git_prompt_color_dirtystate yellow
 set __fish_git_prompt_color_merging red
@@ -55,8 +55,8 @@ set __fish_git_prompt_color_upstream_behind yellow
 
 # Status Chars
 set __fish_git_prompt_char_cleanstate '✔'
-set __fish_git_prompt_char_dirtystate '𝚫'
-set __fish_git_prompt_char_invalidstate 'x'
+set __fish_git_prompt_char_dirtystate 𝚫
+set __fish_git_prompt_char_invalidstate x
 set __fish_git_prompt_char_stagedstate '●'
 set __fish_git_prompt_char_untrackedfiles '+'
 set __fish_git_prompt_char_upstream_prefix ""
@@ -65,7 +65,7 @@ set __fish_git_prompt_char_upstream_behind '⬇ '
 set __fish_git_prompt_char_upstream_ahead '⬆ '
 set __fish_git_prompt_char_upstream_diverged '⬆⬇'
 set __fish_git_prompt_char_stateseparator ''
-set __fish_git_prompt_char_conflictedstate "x"
+set __fish_git_prompt_char_conflictedstate x
 
 
 function fish_prompt --description 'Write out the prompt'
@@ -75,10 +75,10 @@ function fish_prompt --description 'Write out the prompt'
     set -l username (printf "%s%s%s" (set_color red) $USER (set_color normal))
 
     switch "$USER"
-    case root toor
-        set prompt_symbol '#'
-    case '*'
-        set prompt_symbol '$'
+        case root toor
+            set prompt_symbol '#'
+        case '*'
+            set prompt_symbol '$'
     end
 
     printf "%s [%s@%s]%s%s " $time $username $pwd $prompt_symbol (__fish_git_prompt)
@@ -88,10 +88,10 @@ end
 # Environment Variables
 #
 
-set -xg EDITOR nvim
+set -xg EDITOR helix
 set -xg BROWSER x-www-browser:chromium
 set -xg KERL_BUILD_DOCS yes
-set -xg KUBE_EDITOR "nvim"
+set -xg KUBE_EDITOR helix
 set -xg TERM screen-256color
 set -xg SXHKD_SHELL sh
 set -xg GNUPGHOME /home/warmwaffles/.gnupg
@@ -111,10 +111,10 @@ set -g fish_user_paths $HOME/go/bin $fish_user_paths
 set -xg SV4GIT_HOME $HOME/.config/sv4git
 
 if status is-interactive
-  # Commands to run in interactive sessions can go here
-  mise activate -s fish | source
+    # Commands to run in interactive sessions can go here
+    mise activate -s fish | source
 
-  direnv hook fish | source
+    direnv hook fish | source
 end
 
 # Aliases
