@@ -4,13 +4,13 @@ All of my configurations and borderline stupid decisions for applications.
 
 ## Installation
 
-```
+```sh
 make install
 ```
 
 ## Uninstalling
 
-```
+```sh
 make uninstall
 ```
 
