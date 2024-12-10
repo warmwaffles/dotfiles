@@ -57,7 +57,8 @@ xsetroot -cursor_name left_ptr
 nitrogen --restore
 numlockx &
 
-copyq &
+# Clipboard manager
+# copyq &
 
 #
 # WINDOW MANAGERS

@@ -122,4 +122,6 @@ function utcnow -d "Gives an iso8601 string"
     date -u +"%Y-%m-%dT%TZ"
 end
 
+alias clipb="xclip -selection clipboard"
+
 alias z="zellij"
