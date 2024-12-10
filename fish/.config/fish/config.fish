@@ -88,10 +88,10 @@ end
 # Environment Variables
 #
 
-set -xg EDITOR helix
+set -xg EDITOR hx
 set -xg BROWSER x-www-browser:chromium
 set -xg KERL_BUILD_DOCS yes
-set -xg KUBE_EDITOR helix
+set -xg KUBE_EDITOR hx
 set -xg TERM screen-256color
 set -xg SXHKD_SHELL sh
 set -xg GNUPGHOME /home/warmwaffles/.gnupg

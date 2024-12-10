@@ -1,3 +1,7 @@
 [[language]]
 name = "elixir"
 auto-format = false
+
+[[language]]
+name = "python"
+auto-format = false
