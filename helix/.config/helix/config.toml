@@ -34,7 +34,7 @@ newline = "⏎"
 tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
 
 [editor.indent-guides]
-render = true
+render = false
 character = "╎"
 skip-levels = 1
 
@@ -68,11 +68,20 @@ C-x = ["extend_to_line_bounds", "delete_selection"]
 "C-S-d" = ["extend_to_line_bounds", "yank", "paste_after"]
 # Toggle the inlay hints on and off to reduce noise
 C-1 = ":toggle-option lsp.display-inlay-hints"
+# Close the buffer
+C-q = ":buffer-close"
+# Mimic sublime make sure there is only one selection, select word under
+# cursor, set search to selection, then switch to select mode
+C-d = ["keep_primary_selection", "move_prev_word_start", "move_next_word_end", "search_selection", "select_mode"]
 
 [keys.insert]
 # Indent like sublime
 "C-[" = "unindent"
 "C-]" = "indent"
+C-e = ":insert-output comment-signature"
 
 [keys.select]
 "C-/" = "toggle_comments"
+# if already in select mode, just add new selection at next occurrence
+C-d = ["search_selection", "extend_search_next"]
+
