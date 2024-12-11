@@ -20,6 +20,7 @@ install:
 	stow --target $(HOME) -S zellij
 	stow --target $(HOME) -S theme
 	stow --target $(HOME) -S helix
+	stow --target $(HOME) -S yazi
 
 uninstall:
 	stow --target $(HOME) -D alacritty
@@ -40,3 +41,4 @@ uninstall:
 	stow --target $(HOME) -D zellij
 	stow --target $(HOME) -D theme
 	stow --target $(HOME) -D helix
+	stow --target $(HOME) -D yazi
