@@ -6,7 +6,7 @@ mouse = false
 cursorline = true
 color-modes = true
 rulers = [80,100]
-popup-border = "menu"
+popup-border = "all"
 # This is an annoying feature to me, I want to be in
 # charge of what I punch in. Yea you are saving me a
 # key stroke...sometimes. But often, I'm an idiot and
