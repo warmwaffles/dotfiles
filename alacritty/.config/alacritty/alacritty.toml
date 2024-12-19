@@ -58,6 +58,11 @@ normal.family = "Berkeley Mono"
 bold.family = "Berkeley Mono"
 italic.family = "Berkeley Mono"
 bold_italic.family = "Berkeley Mono"
+# When I feel spicy
+# normal.family = "Monaspace Krypton"
+# bold.family = "Monaspace Krypton"
+# italic.family = "Monaspace Krypton"
+# bold_italic.family = "Monaspace Krypton"
 offset = {x = 0, y = 0}
 
 size = 14.0
