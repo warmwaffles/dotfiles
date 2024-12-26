@@ -12,7 +12,7 @@ vim.g.have_nerd_font = false
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
-vim.opt.colorcolumn = "88,100"
+vim.opt.colorcolumn = "80,100"
 vim.opt.fixendofline = true
 
 -- Make line numbers default
