@@ -1,0 +1,12 @@
+## Cursor
+cursor-style = block
+
+## Window
+window-decoration = false
+
+## Font
+font-family = TX-02
+font-size = 14
+
+## Theme
+theme = tokyonight_moon
