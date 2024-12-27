@@ -1,3 +1,6 @@
+## Shell
+shell-integration = fish
+
 ## Cursor
 cursor-style = block
 
@@ -10,3 +13,11 @@ font-size = 14
 
 ## Theme
 theme = tokyonight_moon
+
+## Keybindings
+keybind = ctrl+l=clear_screen
+
+## Other
+# Look I'm trying to close my shit, leave me alone. If I mess up, oh well that
+# is on me.
+confirm-close-surface = false
