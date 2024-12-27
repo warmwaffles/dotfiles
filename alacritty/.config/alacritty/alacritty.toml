@@ -54,10 +54,15 @@ index = 17
 color = '#c53b53'
 
 [font]
-normal.family = "Berkeley Mono"
-bold.family = "Berkeley Mono"
-italic.family = "Berkeley Mono"
-bold_italic.family = "Berkeley Mono"
+# normal.family = "Berkeley Mono"
+# bold.family = "Berkeley Mono"
+# italic.family = "Berkeley Mono"
+# bold_italic.family = "Berkeley Mono"
+# Berkeley Mono V2
+normal.family = "TX-02"
+bold.family = "TX-02"
+italic.family = "TX-02"
+bold_italic.family = "TX-02"
 # When I feel spicy
 # normal.family = "Monaspace Krypton"
 # bold.family = "Monaspace Krypton"
