@@ -151,14 +151,8 @@ super + {Left,Down,Up,Right}
 # Application launcher
 # ##############################################################################
 
-super + e
-  subl3 -n
-
 super + Return
-  alacritty
-
-super + ctrl + Return
-  subl -n
+  ghostty
 
 super + space
   rofi -show run
