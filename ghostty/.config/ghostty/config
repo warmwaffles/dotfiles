@@ -3,6 +3,7 @@ shell-integration = fish
 
 ## Cursor
 cursor-style = block
+shell-integration-features = no-cursor
 
 ## Window
 window-decoration = false
