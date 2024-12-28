@@ -13,6 +13,9 @@ set -l purple fca7ea
 set -l cyan 86e1fc
 set -l pink c099ff
 
+# Cursor
+set -g set fish_cursor_default block
+
 # Syntax Highlighting Colors
 set -g fish_color_normal $foreground
 set -g fish_color_command $cyan
