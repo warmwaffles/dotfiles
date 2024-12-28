@@ -134,18 +134,9 @@ XF86Tools
 XF86AudioMute
   amixer set Master 1+ toggle
 
-XF86AudioLowerVolume
-  amixer set Master 1000- unmute
+XF86Audio{LowerVolume,RaiseVolume}
+  amixer set Master 1000{-,+} unmute
 
-XF86AudioRaiseVolume
-  amixer set Master 1000+ unmute
-
-XF86AudioPlay
-  dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-
-XF86AudioNext
-  dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-
-XF86AudioPrev
-  dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+XF86Audio{Next,Prev,Play}
+  dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.{Next,Previous,PlayPause}
 
