@@ -1,0 +1,6 @@
+#!/bin/bash
+
+deadline=$(date -d '2026-01-01T00:00:00Z' '+%s')
+now=$(date '+%s')
+
+echo "$(($deadline - $now))s"
