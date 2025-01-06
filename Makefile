@@ -17,7 +17,6 @@ install:
 	stow --target $(HOME) -S rofi
 	stow --target $(HOME) -S scripts
 	stow --target $(HOME) -S vim
-	stow --target $(HOME) -S zellij
 	stow --target $(HOME) -S theme
 	stow --target $(HOME) -S helix
 	stow --target $(HOME) -S yazi
@@ -41,7 +40,6 @@ uninstall:
 	stow --target $(HOME) -D rofi
 	stow --target $(HOME) -D scripts
 	stow --target $(HOME) -D vim
-	stow --target $(HOME) -D zellij
 	stow --target $(HOME) -D theme
 	stow --target $(HOME) -D helix
 	stow --target $(HOME) -D yazi
