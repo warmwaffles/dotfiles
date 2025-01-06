@@ -1,17 +1,15 @@
 #!/bin/bash
 
-paths=$(manpath | rg -r " " ":")
-
-find $paths ! -name '*.dist' -type f \
-  | rg -r "" ".gz" \
-  | rg -r "" ".*man[0-9]/" \
-  | sort \
+man -k . \
   | uniq \
-  | fzf \
+  | sort \
+  | fzf  \
+      -q "$1" \
+      --ansi \
       --cycle \
-      --query "${*:-}" \
+      --tiebreak=begin \
       --layout=reverse \
-      --prompt='filter: ' \
-      --preview 'man {1}' \
-      --preview-window 'right,75%,border-left,+{2}+3/3,~3' \
-      --bind "enter:become(man {1})"
+      --prompt='Man > '  \
+      --preview-window 'up,60%,rounded' \
+      --preview "man {1}" \
+      --bind "enter:execute(man {1})"
