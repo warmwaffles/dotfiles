@@ -59,8 +59,6 @@ S-h = ":buffer-previous"
 # Shift the current line up and down
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
-# Kill entire line
-A-d = ["extend_to_line_bounds", "delete_selection"]
 # Toggle comment
 "C-/" = "toggle_comments"
 # Duplicate current line
@@ -79,6 +77,4 @@ C-e = ":insert-output comment-signature"
 
 [keys.select]
 "C-/" = "toggle_comments"
-# if already in select mode, just add new selection at next occurrence
-A-d = ["search_selection", "extend_search_next"]
 C-y = ":clipboard-yank"
