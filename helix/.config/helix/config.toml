@@ -15,6 +15,10 @@ popup-border = "all"
 # move back to fix that issue. It's a skill issue that
 # I'm not fixing. Deal with it.
 auto-pairs = false
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "error"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -69,12 +73,11 @@ F2 = [":toggle-option lsp.display-signature-help-docs", ":toggle-option lsp.auto
 # Close the buffer
 C-q = ":buffer-close"
 C-S-q = ":buffer-close!"
-# Copy to system clipboard
-C-y = ":clipboard-yank"
+S-y = ":clipboard-yank"
 
 [keys.insert]
 C-e = ":insert-output comment-signature"
 
 [keys.select]
 "C-/" = "toggle_comments"
-C-y = ":clipboard-yank"
+S-y = ":clipboard-yank"
