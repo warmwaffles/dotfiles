@@ -17,6 +17,7 @@ theme = tokyonight_moon
 
 ## Keybindings
 keybind = ctrl+l=clear_screen
+keybind = ctrl+,=unbind
 
 ## Other
 # Look I'm trying to close my shit, leave me alone. If I mess up, oh well that
