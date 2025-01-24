@@ -25,9 +25,12 @@ RUST_LOG = "info,simple-completion-language-server=info"
 LOG_FILE = "/tmp/completion.log"
 
 [[language]]
+name = "zig"
+auto-format = false
+
+[[language]]
 name = "elixir"
 auto-format = false
-language-servers = ["scls", "elixir-ls"]
 
 [[language]]
 name = "python"
