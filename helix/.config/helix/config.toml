@@ -27,14 +27,15 @@ select = "underline"
 
 [editor.whitespace.render]
 space = "all"
-tab = "all"
+tab = "none"
 nbsp = "none"
 nnbsp = "none"
 newline = "none"
 
 [editor.whitespace.characters]
 space = " "
-nbsp = "⍽"    # Non Breaking SPace
+nbsp = "⍽"
+nnbsp = "␣"
 tab = "→"
 newline = "⏎"
 tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
@@ -71,6 +72,9 @@ C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_befor
 C-q = ":buffer-close"
 C-S-q = ":buffer-close!"
 S-y = ":clipboard-yank"
+C-r = ":reload"
+C-left = ["move_prev_word_start" , "collapse_selection"]
+C-right = ["move_next_word_end", "move_char_right"]
 
 [keys.normal."space"]
 "F" = "file_picker_in_current_buffer_directory"
@@ -80,6 +84,8 @@ C-e = ":insert-output comment-signature"
 "A-," = "unindent"
 "A-." = "indent"
 C-p = "paste_before"
+C-left = ["move_prev_word_start" , "collapse_selection"]
+C-right = ["move_next_word_end", "move_char_right"]
 
 [keys.select]
 "C-/" = "toggle_comments"
