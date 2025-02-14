@@ -11,3 +11,4 @@
 .env.*
 venv/
 /.elixir_ls
+/.helix

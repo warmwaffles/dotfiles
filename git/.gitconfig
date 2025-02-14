@@ -31,6 +31,8 @@
 [alias]
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit --date=relative
     lga = lg --all
+    lgb = lg --branches
+    s = status -u
     rl = reflog --date=relative
     inthere  = commit --amend --no-edit --reset-author
     fuckit = commit --all -m 'zero fucks given'
@@ -100,7 +102,7 @@
     smudge = git-lfs smudge -- %f
 
 [commit]
-    gpgsign = true
+    gpgsign = false
 
 [rebase]
     updateRefs = true
