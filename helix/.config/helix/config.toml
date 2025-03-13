@@ -16,6 +16,8 @@ popup-border = "all"
 # I'm not fixing. Deal with it.
 auto-pairs = false
 end-of-line-diagnostics = "hint"
+trim-final-newlines = true
+trim-trailing-whitespace = true
 
 [editor.inline-diagnostics]
 cursor-line = "error"
@@ -54,16 +56,24 @@ mode.select = "SELECT"
 hidden = false
 
 [editor.lsp]
-enable = false
+enable = true
+auto-signature-help = false
+
+#
+# NORMAL MODE
+#
 
 [keys.normal]
-D = "kill_to_line_end"
 # Shift-l and -h to move through tabs
-S-l = ":buffer-next"
-S-h = ":buffer-previous"
+# S-l = ":buffer-next"
+# S-h = ":buffer-previous"
+tab = ":buffer-next"
+S-tab = ":buffer-previous"
 # Shift the current line up and down
-C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-S-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-S-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 # Toggle comment
 "C-/" = "toggle_comments"
 # Duplicate current line
@@ -73,20 +83,59 @@ C-q = ":buffer-close"
 C-S-q = ":buffer-close!"
 S-y = ":clipboard-yank"
 C-r = ":reload"
-C-left = ["move_prev_word_start" , "collapse_selection"]
-C-right = ["move_next_word_end", "move_char_right"]
+C-right = "move_next_word_start"
+C-left = "move_prev_word_end"
+S-left = "extend_char_left"
+S-right = "extend_char_right"
+S-up = "extend_line_up"
+S-down = "extend_line_down"
+C-down = "scroll_down"
+C-up = "scroll_up"
+V = ["goto_first_nonwhitespace", "extend_to_line_end"]
+D = "kill_to_line_end"
+S-end = ["ensure_selections_forward", "extend_to_line_end"]
+C-space = "signature_help"
+X = "extend_line_above"
 
-[keys.normal."space"]
+[keys.normal.space]
 "F" = "file_picker_in_current_buffer_directory"
+
+[keys.normal.backspace]
+backspace = ":buffer-close"
+d = "delete_selection_noyank"
+c = "change_selection_noyank"
+y = ":yank-diagnostic"
+
+# UI Settings and stuff
+[keys.normal.space.u]
+h = ":toggle lsp.display-inlay-hints"
+
+
+#
+# INSERT MODE
+#
 
 [keys.insert]
 C-e = ":insert-output comment-signature"
 "A-," = "unindent"
 "A-." = "indent"
 C-p = "paste_before"
-C-left = ["move_prev_word_start" , "collapse_selection"]
-C-right = ["move_next_word_end", "move_char_right"]
+C-right = "move_next_word_start"
+C-left = "move_prev_word_end"
+C-space = "signature_help"
+
+#
+# SELECT MODE
+#
 
 [keys.select]
 "C-/" = "toggle_comments"
 S-y = ":clipboard-yank"
+S-left = "extend_char_left"
+S-right = "extend_char_right"
+S-up = "extend_line_up"
+S-down = "extend_line_down"
+tab = "trim_selections"
+X = "extend_line_above"
+ret = "extend_to_word"
+";" = ["collapse_selection", "normal_mode"]

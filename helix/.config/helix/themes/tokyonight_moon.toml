@@ -74,7 +74,9 @@ type = { fg = "#65bcff" }
 "ui.selection" = { bg = "bg_highlight" }
 "ui.statusline" = { bg = "#1e2030", fg = "#828bb8" }
 "ui.statusline.inactive" = { bg = "#1e2030", fg = "#3b4261" }
+"ui.statusline.insert" = { bg = "green", fg = "black" }
 "ui.statusline.normal" = { bg = "blue", fg = "black" }
+"ui.statusline.select" = { bg = "yellow", fg = "black" }
 "ui.text" = { bg = "#222436", fg = "#c8d3f5" }
 "ui.text.focus" = { bg = "#2d3f76" }
 "ui.text.inactive" = { fg = "#636da6", modifiers = ["italic"] }

@@ -25,6 +25,13 @@ RUST_LOG = "info,simple-completion-language-server=info"
 LOG_FILE = "/tmp/completion.log"
 
 [[language]]
+name = "c"
+file-types = ["c", "h"]
+indent = { tab-width = 4, unit = "    " }
+# comment-tokens = ["//", "///"]
+# block-comment-tokens = { start = "/*", end = "*/" }
+
+[[language]]
 name = "zig"
 auto-format = false
 
