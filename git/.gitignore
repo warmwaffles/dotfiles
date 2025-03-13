@@ -12,3 +12,4 @@
 venv/
 /.elixir_ls
 /.helix
+.xmake/
