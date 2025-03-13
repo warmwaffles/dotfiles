@@ -34,6 +34,12 @@
     lgb = lg --branches
     s = status -u
     rl = reflog --date=relative
+    # `git log` with patches shown with difftastic.
+    dl = -c diff.external=difft log -p --ext-diff
+    # Show the most recent commit with difftastic.
+    ds = -c diff.external=difft show --ext-diff
+    # `git diff` with difftastic.
+    dft = -c diff.external=difft diff
     inthere  = commit --amend --no-edit --reset-author
     fuckit = commit --all -m 'zero fucks given'
     out = reset HEAD
@@ -69,7 +75,7 @@
 
 [diff]
     algorithm = histogram
-    tool = difftastic
+    external = difft
 
 [difftool]
     prompt = false
