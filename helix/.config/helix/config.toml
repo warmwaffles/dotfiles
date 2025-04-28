@@ -4,10 +4,12 @@ theme = "tokyonight_moon"
 line-number = "absolute"
 mouse = false
 cursorline = true
+undercurl = true
 color-modes = true
 rulers = [81,101]
 scrolloff = 7
 popup-border = "all"
+jump-label-alphabet = "tnseriplfuwydhcxoaqz"
 # This is an annoying feature to me, I want to be in
 # charge of what I punch in. Yea you are saving me a
 # key stroke...sometimes. But often, I'm an idiot and
@@ -26,6 +28,9 @@ cursor-line = "error"
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.soft-wrap]
+enable = true
 
 [editor.whitespace.render]
 space = "all"
@@ -65,13 +70,11 @@ auto-signature-help = false
 
 [keys.normal]
 # Shift-l and -h to move through tabs
-# S-l = ":buffer-next"
-# S-h = ":buffer-previous"
-tab = ":buffer-next"
-S-tab = ":buffer-previous"
+"}" = ":buffer-next"
+"{" = ":buffer-previous"
 # Shift the current line up and down
-C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
-C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+# C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+# C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-S-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 C-S-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 # Toggle comment
@@ -83,25 +86,35 @@ C-q = ":buffer-close"
 C-S-q = ":buffer-close!"
 S-y = ":clipboard-yank"
 C-r = ":reload"
+F5 = ":reload"
 C-right = "move_next_word_start"
 C-left = "move_prev_word_end"
 S-left = "extend_char_left"
 S-right = "extend_char_right"
 S-up = "extend_line_up"
 S-down = "extend_line_down"
-C-down = "scroll_down"
-C-up = "scroll_up"
+
+# Scroll
+# C-down = "scroll_down"
+# C-up = "scroll_up"
+C-up = ["move_line_up", "scroll_up"]
+C-down = ["move_line_down", "scroll_down"]
+C-k = ["move_line_up", "scroll_up"]
+C-j = ["move_line_down", "scroll_down"]
+C-p = "half_page_up"
+C-n = "half_page_down"
+
 V = ["goto_first_nonwhitespace", "extend_to_line_end"]
 D = "kill_to_line_end"
 S-end = ["ensure_selections_forward", "extend_to_line_end"]
 C-space = "signature_help"
 X = "extend_line_above"
+F12 = ":format"
 
 [keys.normal.space]
 "F" = "file_picker_in_current_buffer_directory"
 
 [keys.normal.backspace]
-backspace = ":buffer-close"
 d = "delete_selection_noyank"
 c = "change_selection_noyank"
 y = ":yank-diagnostic"
@@ -109,7 +122,6 @@ y = ":yank-diagnostic"
 # UI Settings and stuff
 [keys.normal.space.u]
 h = ":toggle lsp.display-inlay-hints"
-
 
 #
 # INSERT MODE
@@ -123,6 +135,7 @@ C-p = "paste_before"
 C-right = "move_next_word_start"
 C-left = "move_prev_word_end"
 C-space = "signature_help"
+tab = "insert_tab"
 
 #
 # SELECT MODE
