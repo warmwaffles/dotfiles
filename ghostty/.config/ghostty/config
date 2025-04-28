@@ -6,7 +6,8 @@ cursor-style = block
 shell-integration-features = no-cursor
 
 ## Window
-window-decoration = false
+window-decoration = none
+gtk-titlebar = false
 
 ## Font
 font-family = Berkeley Mono
