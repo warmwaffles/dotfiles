@@ -23,6 +23,7 @@ install:
 	stow --target $(HOME) -S gitui
 	stow --target $(HOME) -S lazygit
 	stow --target $(HOME) -S ghostty
+	stow --target $(HOME) -S kitty
 
 uninstall:
 	stow --target $(HOME) -D alacritty
@@ -46,3 +47,4 @@ uninstall:
 	stow --target $(HOME) -D gitui
 	stow --target $(HOME) -D lazygit
 	stow --target $(HOME) -D ghotty
+	stow --target $(HOME) -D kitty
