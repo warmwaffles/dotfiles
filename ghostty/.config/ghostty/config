@@ -24,3 +24,4 @@ keybind = ctrl+,=unbind
 # Look I'm trying to close my shit, leave me alone. If I mess up, oh well that
 # is on me.
 confirm-close-surface = false
+keybind = shift+enter=text:\n
