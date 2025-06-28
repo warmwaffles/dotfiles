@@ -24,6 +24,7 @@ install:
 	stow --target $(HOME) -S lazygit
 	stow --target $(HOME) -S ghostty
 	stow --target $(HOME) -S kitty
+	stow --target $(HOME) -S zellij
 
 uninstall:
 	stow --target $(HOME) -D alacritty
@@ -48,3 +49,4 @@ uninstall:
 	stow --target $(HOME) -D lazygit
 	stow --target $(HOME) -D ghotty
 	stow --target $(HOME) -D kitty
+	stow --target $(HOME) -D zellij
