@@ -1,17 +1,25 @@
 ## Shell
 shell-integration = fish
 
+scrollback-limit = 268435456
+
+## Clipboard
+clipboard-paste-protection = false
+
 ## Cursor
 cursor-style = block
 shell-integration-features = no-cursor
 
 ## Window
-window-decoration = none
+window-decoration = auto
+window-padding-x = 0
+window-padding-y = 0
 gtk-titlebar = false
+gtk-wide-tabs = false
 
 ## Font
 font-family = Berkeley Mono
-font-size = 14
+font-size = 13
 
 ## Theme
 theme = tokyonight_moon
