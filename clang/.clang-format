@@ -1,8 +1,12 @@
 ---
-Language: Cpp
+Language: C
 AccessModifierOffset: -2
 AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: true
+AlignArrayOfStructures: None
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
 AlignConsecutiveDeclarations: false
 AlignConsecutiveMacros: true
 AlignEscapedNewlinesLeft: false
@@ -42,30 +46,41 @@ BraceWrapping:
 BreakBeforeBinaryOperators: None
 BreakBeforeBraces: Mozilla
 BreakBeforeTernaryOperators: true
+BreakBinaryOperations: Never
 BreakConstructorInitializersBeforeComma: true
+BreakFunctionDefinitionParameters: false
+BreakStringLiterals: true
 ColumnLimit: 0
-CommentPragmas: '^ IWYU pragma:'
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 4
 Cpp11BracedListStyle: true
 DerivePointerAlignment: false
 DisableFormat: false
-ExperimentalAutoDetectBinPacking: false
-ForEachMacros: [ foreach, Q_FOREACH, BOOST_FOREACH ]
+# TODO: clang-format 21 enable
+# EnumTrailingComma: Leave
+ForEachMacros: []
 IncludeCategories:
-  - Regex: '^"(llvm|llvm-c|clang|clang-c)/'
-    Priority: 2
-  - Regex: '^(<|"(gtest|isl|json)/)'
-    Priority: 3
-  - Regex: '.*'
-    Priority: 1
+  - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
+    Priority:        2
+    SortPriority:    2
+    CaseSensitive:   true
+  - Regex:           '^((<|")(gtest|gmock|isl|json)/)'
+    Priority:        3
+  - Regex:           '<[[:alnum:].]+>'
+    Priority:        4
+  - Regex:           '.*'
+    Priority:        1
+    SortPriority:    0
 IndentCaseLabels: true
 IndentExternBlock: AfterExternBlock
-IndentPPDirectives: None
+IndentGotoLabels: false
+IndentPPDirectives: BeforeHash
 IndentWidth: 4
 IndentWrappedFunctionNames: false
-KeepEmptyLinesAtTheStartOfBlocks: true
+InsertBraces: true
+InsertTrailingCommas: Wrapped
+LineEnding: LF
 MacroBlockBegin: ''
 MacroBlockEnd: ''
 MaxEmptyLinesToKeep: 1
@@ -82,19 +97,27 @@ PenaltyBreakTemplateDeclaration: 10
 PenaltyExcessCharacter: 1000000
 PenaltyReturnTypeOnItsOwnLine: 200
 PointerAlignment: Left
-ReflowComments: false
+# See: https://clang.llvm.org/docs/ClangFormatStyleOptions.html#qualifieralignment
+QualifierAlignment: Leave
+# See: https://clang.llvm.org/docs/ClangFormatStyleOptions.html#qualifierorder
+# QualifierOrder: [inline, static, type, const, volatile]
+ReferenceAlignment: Right
+# See: https://clang.llvm.org/docs/ClangFormatStyleOptions.html#reflowcomments
+ReflowComments: Never
 SortIncludes: false
 SpaceAfterCStyleCast: false
 SpaceBeforeAssignmentOperators: true
+SpaceBeforeCaseColon: false
 SpaceBeforeParens: ControlStatements
 SpaceInEmptyParentheses: false
 SpacesBeforeTrailingComments: 1
 SpacesInAngles: false
 SpacesInContainerLiterals: true
 SpacesInCStyleCastParentheses: false
+SpacesInLineCommentPrefix:
+  Minimum: 1
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
-Standard: Cpp11
+Standard: Latest
 TabWidth: 4
 UseTab: Never
-...
