@@ -12,12 +12,12 @@ layout {
         }
     }
     tab name="Editor" {
-        pane split_direction="vertical" {
-            pane command="hx" size="65%" {
-                args "."
-            }
-            pane command="opencode" size="35%"
+        pane command="hx" {
+            args "."
         }
+    }
+    tab name="Opencode" {
+        pane command="opencode"
     }
     tab name="Shell" {
         pane

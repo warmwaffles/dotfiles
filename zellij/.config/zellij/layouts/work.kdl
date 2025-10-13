@@ -12,11 +12,8 @@ layout {
         }
     }
     tab name="Editor" {
-        pane split_direction="vertical" {
-            pane command="hx" size="65%" {
-                args "."
-            }
-            pane command="cursor-agent" size="35%"
+        pane command="hx" {
+            args "."
         }
     }
     tab name="Shell" {
