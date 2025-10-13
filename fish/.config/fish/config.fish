@@ -124,6 +124,39 @@ function utcnow -d "Gives an iso8601 string"
     date -u +"%Y-%m-%dT%TZ"
 end
 
+function opencode-use --description 'Symlink ~/.local/share/opencode to opencode-work or opencode-personal'
+    set -l target_dir ""
+    switch $argv[1]
+        case work
+            set target_dir ~/.local/share/opencode-work
+        case personal
+            set target_dir ~/.local/share/opencode-personal
+        case '*'
+            echo "Error: Invalid argument. Use 'work' or 'personal'."
+            return 1
+    end
+
+    # Check if target directory exists
+    if not test -d $target_dir
+        echo "Error: Target directory $target_dir does not exist."
+        return 1
+    end
+
+    # Remove existing symlink or directory if it exists
+    if test -e ~/.local/share/opencode
+        rm -rf ~/.local/share/opencode
+    end
+
+    # Create the symlink
+    ln -s $target_dir ~/.local/share/opencode
+    if test $status -eq 0
+        echo "Successfully linked ~/.local/share/opencode to $target_dir"
+    else
+        echo "Error: Failed to create symlink."
+        return 1
+    end
+end
+
 alias clipb="xclip -selection clipboard"
 
 alias l="eza -a"
