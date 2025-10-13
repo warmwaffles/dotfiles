@@ -28,6 +28,10 @@ LOG_FILE = "/tmp/completion.log"
 command = "lexical"
 args = []
 
+[language-server.expert]
+command = "expert-lsp"
+args = []
+
 [[language]]
 name = "c"
 file-types = ["c", "h"]
@@ -42,11 +46,12 @@ auto-format = false
 [[language]]
 name = "elixir"
 auto-format = false
-language-servers = ["lexical"]
+# language-servers = ["lexical"]
+language-servers = ["expert"]
 
 [[language]]
 name = "heex"
-language-servers = ["lexical"]
+language-servers = ["expert"]
 
 [[language]]
 name = "python"
