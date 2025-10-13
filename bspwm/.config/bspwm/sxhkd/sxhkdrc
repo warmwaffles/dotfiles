@@ -105,7 +105,7 @@ super + Return
 
 ## Program launcher
 super + space
-  rofi -show run
+  rofi -modes run -show run
 
 ## Calculator bullshit
 XF86Calculator
