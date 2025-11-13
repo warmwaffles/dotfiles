@@ -6,9 +6,6 @@
 [ui]
     color = true
 
-[core]
-    excludesfile = ~/.gitignore
-
 [color]
     ui = true
 
@@ -97,6 +94,11 @@
 
 [merge]
     ff = always
+	conflictStyle = diff3
+
+[merge "mergiraf"]
+	name = mergiraf
+	driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
 
 [init]
     defaultBranch = main

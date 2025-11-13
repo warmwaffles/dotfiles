@@ -1,3 +1,6 @@
+*.c    linguist-language=C
+*.h    linguist-language=C
+
 *.css  diff=css
 *.ex   diff=elixir
 *.exs  diff=elixir
@@ -6,3 +9,5 @@
 *.md   diff=markdown
 *.rake diff=ruby
 *.rb   diff=ruby
+
+*      merge=mergiraf
