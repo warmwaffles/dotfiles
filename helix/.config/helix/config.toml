@@ -7,7 +7,7 @@ mouse = false
 cursorline = true
 undercurl = true
 color-modes = true
-rulers = [81,101]
+rulers = [81, 101]
 scrolloff = 7
 popup-border = "all"
 jump-label-alphabet = "tnseriplfuwydhcxoaqz"
@@ -76,7 +76,12 @@ auto-signature-help = false
 # Shift the current line up and down
 # C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 # C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-C-S-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-S-up = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before"
+]
 C-S-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 # Toggle comment
 "C-/" = "toggle_comments"
@@ -94,7 +99,6 @@ S-left = "extend_char_left"
 S-right = "extend_char_right"
 S-up = "extend_line_up"
 S-down = "extend_line_down"
-
 # Scroll
 # C-down = "scroll_down"
 # C-up = "scroll_up"
@@ -104,7 +108,6 @@ C-k = ["move_line_up", "scroll_up"]
 C-j = ["move_line_down", "scroll_down"]
 C-p = "half_page_up"
 C-n = "half_page_down"
-
 V = ["goto_first_nonwhitespace", "extend_to_line_end"]
 D = "kill_to_line_end"
 S-end = ["ensure_selections_forward", "extend_to_line_end"]
@@ -115,11 +118,6 @@ F12 = ":format"
 [keys.normal.space]
 "F" = "file_picker_in_current_buffer_directory"
 
-[keys.normal.backspace]
-d = "delete_selection_noyank"
-c = "change_selection_noyank"
-y = ":yank-diagnostic"
-
 # UI Settings and stuff
 [keys.normal.space.u]
 h = ":toggle lsp.display-inlay-hints"
@@ -127,6 +125,11 @@ h = ":toggle lsp.display-inlay-hints"
 #
 # INSERT MODE
 #
+
+[keys.normal.backspace]
+d = "delete_selection_noyank"
+c = "change_selection_noyank"
+y = ":yank-diagnostic"
 
 [keys.insert]
 C-e = ":insert-output comment-signature"
