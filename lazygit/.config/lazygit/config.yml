@@ -27,3 +27,8 @@ gui:
       - "#c53b53"
     defaultFgColor:
       - "#c8d3f5"
+git:
+  autoFetch: false
+  pagers:
+    - useExternalDiffGitConfig: true
+    - externalDiffCommand: difft --display=inline --color=always
