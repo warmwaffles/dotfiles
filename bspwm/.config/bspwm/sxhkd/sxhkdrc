@@ -127,6 +127,12 @@ super + ctrl + 4
 super + ctrl + 3
   ksnip -r
 
+XF86KbdBrightness{Up,Down}
+  brightnessctl --device tpacpi::kbd_backlight 10%{+,-}
+
+XF86MonBrightness{Up,Down}
+  brightnessctl --device amdgpu_bl1 set 10%{+,-}
+
 ## Audio and music
 XF86Tools
   spotify
