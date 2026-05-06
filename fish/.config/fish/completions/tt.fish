@@ -1,0 +1,1 @@
+/home/warmwaffles/src/projects/timetracker/completions/tt.fish

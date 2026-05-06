@@ -71,9 +71,11 @@ set -xg XDG_DOWNLOADS $HOME/downloads
 set -xg XDG_DATA_HOME $HOME/.local/share
 set -xg XDG_STATE_HOME $HOME/.local/state
 
-set -g fish_user_paths $HOME/.local/bin $fish_user_paths
-set -g fish_user_paths $HOME/.cargo/bin $fish_user_paths
-set -g fish_user_paths $HOME/go/bin $fish_user_paths
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/go/bin
+fish_add_path /opt/shader-slang-bin/bin
+fish_add_path $HOME/.cache/.bun/bin
 
 # SV4GIT
 set -xg SV4GIT_HOME $HOME/.config/sv4git
