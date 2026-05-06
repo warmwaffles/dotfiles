@@ -15,3 +15,6 @@ venv/
 /.expert
 /.helix
 .xmake/
+
+# Ticket tracking for now, skip git
+# .tickets/

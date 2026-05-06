@@ -41,8 +41,7 @@
     fuckit = commit --all -m 'zero fucks given'
     out = reset HEAD
     back = reset HEAD^
-    save = commit -m 'saving'
-    wip = commit -m 'wip\n\n[skip ci]'
+    wip = commit -m "wip" --no-verify
     ignored = ls-files --others -i --exclude-standard
     cp = cherry-pick
     dft = difftool
@@ -94,7 +93,7 @@
 
 [merge]
     ff = always
-	conflictStyle = diff3
+	conflictStyle = zdiff3
 
 [merge "mergiraf"]
 	name = mergiraf
