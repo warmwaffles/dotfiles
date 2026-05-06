@@ -58,3 +58,7 @@ auto-format = false
 [[language]]
 name = "git-commit"
 language-servers = ["scls"]
+
+[[language]]
+name = "yaml"
+auto-format = false

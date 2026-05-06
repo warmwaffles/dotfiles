@@ -114,6 +114,7 @@ S-end = ["ensure_selections_forward", "extend_to_line_end"]
 C-space = "signature_help"
 X = "extend_line_above"
 F12 = ":format"
+C-h = ":toggle-option file-picker.hidden"
 
 [keys.normal.space]
 "F" = "file_picker_in_current_buffer_directory"
