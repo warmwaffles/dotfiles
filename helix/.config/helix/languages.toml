@@ -32,6 +32,10 @@ args = []
 command = "expert"
 args = ["--stdio"]
 
+[language-server.dexter]
+command = "dexter"
+args = ["lsp"]
+
 [[language]]
 name = "c"
 file-types = ["c", "h"]
@@ -45,11 +49,11 @@ auto-format = false
 [[language]]
 name = "elixir"
 auto-format = false
-language-servers = ["expert"]
+language-servers = ["dexter"]
 
 [[language]]
 name = "heex"
-language-servers = ["expert"]
+language-servers = ["dexter"]
 
 [[language]]
 name = "python"
