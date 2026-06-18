@@ -48,7 +48,7 @@ uninstall:
 	stow --target $(HOME) -D yazi
 	stow --target $(HOME) -D gitui
 	stow --target $(HOME) -D lazygit
-	stow --target $(HOME) -D ghotty
+	stow --target $(HOME) -D ghostty
 	stow --target $(HOME) -D kitty
 	stow --target $(HOME) -D zellij
 	stow --target $(HOME) -D btop
