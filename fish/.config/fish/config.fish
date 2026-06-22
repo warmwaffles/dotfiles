@@ -127,7 +127,8 @@ end
 
 alias clipb="xclip -selection clipboard"
 
-alias l="eza -a"
-alias la="eza -h -a"
-alias ll="eza -h -l"
-alias lla="eza -h -l -a"
+alias l="eza -a -g"
+alias la="eza -h -a -g"
+alias ll="eza -h -l -g"
+alias lla="eza -h -l -a -g"
+alias lso="eza -h -l -o -g"
