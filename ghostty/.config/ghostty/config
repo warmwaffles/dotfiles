@@ -22,6 +22,10 @@ gtk-wide-tabs = false
 ## Font
 font-family = Berkeley Mono
 font-size = 13
+font-style = Regular
+font-style-bold = Bold
+font-style-italic = Oblique
+font-style-bold-italic = BoldOblique
 
 ## Theme
 theme = Catppuccin Mocha
