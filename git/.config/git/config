@@ -39,6 +39,7 @@
     dft = -c diff.external=difft diff
     inthere  = commit --amend --no-edit --reset-author
     fuckit = commit --all -m 'zero fucks given'
+    pnv = push --no-verify
     out = reset HEAD
     back = reset HEAD^
     wip = commit -m "wip" --no-verify
