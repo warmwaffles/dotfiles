@@ -65,6 +65,9 @@ set -xg SXHKD_SHELL sh
 set -xg GNUPGHOME /home/warmwaffles/.gnupg
 set -xg _JAVA_AWT_WM_NONREPARENTING 1
 
+# Stupid lefthook crap
+set -xg LEFTHOOK 0
+
 set -xg XDG_CONFIG_HOME $HOME/.config
 set -xg XDG_CACHE_HOME $HOME/.cache
 set -xg XDG_DOWNLOADS $HOME/downloads
