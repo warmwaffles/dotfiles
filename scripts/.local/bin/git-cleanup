@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "==> Pruning worktrees"
+git worktree prune -v
+
 echo "==> Removing merged branches"
 git branch --merged | grep -v "\*" | cut -c 3- | grep -v -E "(master)|(main)" | xargs -n 1 git branch -d
 
