@@ -1,2 +1,15 @@
+[plugin]
+prepend_preloaders = [
+	{ mime = "image/x-aseprite", run = "ase-preview" },
+	{ url = "*.ase", run = "ase-preview" },
+	{ url = "*.aseprite", run = "ase-preview" },
+]
+
+prepend_previewers = [
+	{ mime = "image/x-aseprite", run = "ase-preview" },
+	{ url = "*.ase", run = "ase-preview" },
+	{ url = "*.aseprite", run = "ase-preview" },
+]
+
 [mgr]
 show_hidden = true
