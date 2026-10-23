@@ -15,6 +15,7 @@ venv/
 /.expert
 /.helix
 .xmake/
+/.rumdl_cache
 
 # Ticket tracking for now, skip git
 # .tickets/
