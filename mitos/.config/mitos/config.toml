@@ -1,0 +1,166 @@
+# theme = "tokyonight_moon"
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "absolute"
+mouse = false
+cursorline = true
+undercurl = true
+color-modes = true
+rulers = [80, 100]
+scrolloff = 7
+jump-label-alphabet = "tnseriplfuwydhcxoaqz"
+# This is an annoying feature to me, I want to be in
+# charge of what I punch in. Yea you are saving me a
+# key stroke...sometimes. But often, I'm an idiot and
+# forgot to put parens or quotes while typing and I
+# move back to fix that issue. It's a skill issue that
+# I'm not fixing. Deal with it.
+auto-pairs = false
+end-of-line-diagnostics = "hint"
+trim-final-newlines = true
+trim-trailing-whitespace = true
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+
+[editor.inline-blame]
+show = "cursor-line"
+format = "{commit} • {date} • {author} • {title}"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.whitespace.render]
+space = "all"
+tab = "none"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = " "
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+newline = "⏎"
+tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
+
+[editor.indent-guides]
+render = false
+character = "╎"
+skip-levels = 1
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+enable = true
+auto-signature-help = false
+
+#
+# NORMAL MODE
+#
+
+[keys.normal]
+# Shift-l and -h to move through tabs
+"}" = ":buffer-next"
+"{" = ":buffer-previous"
+# Shift the current line up and down
+# C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+# C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-S-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-S-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+# Toggle comment
+"C-/" = "toggle_comments"
+# Duplicate current line
+"C-S-d" = ["extend_to_line_bounds", "yank", "paste_after"]
+# Close the buffer
+C-q = ":buffer-close"
+C-S-q = ":buffer-close!"
+S-y = ":clipboard-yank"
+C-r = ":reload"
+F5 = ":reload"
+C-right = "move_next_word_start"
+C-left = "move_prev_word_end"
+S-left = "extend_char_left"
+S-right = "extend_char_right"
+S-up = "extend_line_up"
+S-down = "extend_line_down"
+# Scroll
+# C-down = "scroll_down"
+# C-up = "scroll_up"
+C-up = ["move_line_up", "scroll_up"]
+C-down = ["move_line_down", "scroll_down"]
+C-k = ["move_line_up", "scroll_up"]
+C-j = ["move_line_down", "scroll_down"]
+C-p = "half_page_up"
+C-n = "half_page_down"
+V = ["goto_first_nonwhitespace", "extend_to_line_end"]
+D = "kill_to_line_end"
+S-end = ["ensure_selections_forward", "extend_to_line_end"]
+C-space = "signature_help"
+X = "extend_line_above"
+F12 = ":format"
+C-h = ":toggle-option file-picker.hidden"
+C-m = ":toggle-option soft-wrap.enable"
+
+[keys.normal.space]
+"F" = "file_picker_in_current_buffer_directory"
+
+# UI Settings and stuff
+[keys.normal.space.u]
+h = ":toggle lsp.display-inlay-hints"
+
+#
+# INSERT MODE
+#
+
+[keys.normal.backspace]
+d = "delete_selection_noyank"
+c = "change_selection_noyank"
+y = ":yank-diagnostic"
+
+[keys.insert]
+C-e = ":insert-output comment-signature"
+"A-," = "unindent"
+"A-." = "indent"
+C-p = "paste_before"
+C-right = "move_next_word_start"
+C-left = "move_prev_word_end"
+C-space = "signature_help"
+tab = "insert_tab"
+
+#
+# SELECT MODE
+#
+
+[keys.select]
+"C-/" = "toggle_comments"
+S-y = ":clipboard-yank"
+S-left = "extend_char_left"
+S-right = "extend_char_right"
+S-up = "extend_line_up"
+S-down = "extend_line_down"
+tab = "trim_selections"
+X = "extend_line_above"
+ret = "extend_to_word"
+";" = ["collapse_selection", "normal_mode"]
+
+#
+# Custom Commands
+# https://mitos.computer/docs/custom-commands
+#
+[commands]
+# Because I am really stupid when I type
+":Wq" = [":write", ":quit"]

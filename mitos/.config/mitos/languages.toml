@@ -1,0 +1,55 @@
+[language-server.lexical]
+command = "lexical"
+args = []
+
+[language-server.expert]
+command = "expert"
+args = ["--stdio"]
+
+[language-server.dexter]
+command = "dexter"
+args = ["lsp"]
+
+[language-server.clangd]
+command = "clangd"
+args = ["-j=8", "--malloc-trim", "--background-index", "--pch-storage=memory"]
+
+[[language]]
+name = "markdown"
+# Built-in servers include rumdl with the format feature. Format-on-save
+# is on by default, so markdown rewrites itself unless this is false.
+auto-format = false
+text-width = 80
+rulers = [80, 100]
+soft-wrap = { wrap-at-text-width = true }
+
+[[language]]
+name = "c"
+file-types = ["c", "h"]
+indent = { tab-width = 4, unit = "    " }
+comment-token = ["//", "///", "//!"]
+
+[[language]]
+name = "zig"
+auto-format = false
+
+[[language]]
+name = "elixir"
+auto-format = false
+language-servers = ["dexter"]
+
+[[language]]
+name = "heex"
+language-servers = ["dexter"]
+
+[[language]]
+name = "python"
+auto-format = false
+
+[[language]]
+name = "git-commit"
+language-servers = ["scls"]
+
+[[language]]
+name = "yaml"
+auto-format = false

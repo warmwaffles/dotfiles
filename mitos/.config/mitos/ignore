@@ -1,0 +1,20 @@
+# Useless assets
+*.png
+*.ico
+*.gif
+*.pdf
+*.tif
+*.tiff
+*.jpg
+*.bmp
+*.tga
+
+# font
+*.eot
+*.woff
+*.woff2
+*.otf
+*.ttf
+
+!.tickets/
+!.opencode/

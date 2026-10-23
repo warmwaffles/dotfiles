@@ -19,6 +19,7 @@ install:
 	stow --target $(HOME) -S vim
 	stow --target $(HOME) -S theme
 	stow --target $(HOME) -S helix
+	stow --target $(HOME) -S mitos
 	stow --target $(HOME) -S yazi
 	stow --target $(HOME) -S gitui
 	stow --target $(HOME) -S lazygit
@@ -45,6 +46,7 @@ uninstall:
 	stow --target $(HOME) -D vim
 	stow --target $(HOME) -D theme
 	stow --target $(HOME) -D helix
+	stow --target $(HOME) -D mitos
 	stow --target $(HOME) -D yazi
 	stow --target $(HOME) -D gitui
 	stow --target $(HOME) -D lazygit
