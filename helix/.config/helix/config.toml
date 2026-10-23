@@ -7,7 +7,7 @@ mouse = false
 cursorline = true
 undercurl = true
 color-modes = true
-rulers = [81, 101]
+rulers = [80, 100]
 scrolloff = 7
 popup-border = "all"
 jump-label-alphabet = "tnseriplfuwydhcxoaqz"
@@ -115,6 +115,7 @@ C-space = "signature_help"
 X = "extend_line_above"
 F12 = ":format"
 C-h = ":toggle-option file-picker.hidden"
+C-m = ":toggle-option soft-wrap.enable"
 
 [keys.normal.space]
 "F" = "file_picker_in_current_buffer_directory"
