@@ -56,7 +56,7 @@ end
 # Environment Variables
 #
 
-set -xg EDITOR hx
+set -xg EDITOR ms
 set -xg BROWSER x-www-browser:chromium
 set -xg KERL_BUILD_DOCS yes
 set -xg KUBE_EDITOR hx

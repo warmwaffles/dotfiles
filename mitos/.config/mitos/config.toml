@@ -3,35 +3,45 @@ theme = "catppuccin_mocha"
 
 [editor]
 line-number = "absolute"
-mouse = false
-cursorline = true
-undercurl = true
-color-modes = true
-rulers = [80, 100]
-scrolloff = 7
 jump-label-alphabet = "tnseriplfuwydhcxoaqz"
+
+[editor.diagnostics.inline]
+cursor-line = "error"
+
+[editor.diagnostics.end-of-line]
+severity = "hint"
+
+[editor.rulers]
+columns = [80, 100]
+
+[editor.auto-pairs]
 # This is an annoying feature to me, I want to be in
 # charge of what I punch in. Yea you are saving me a
 # key stroke...sometimes. But often, I'm an idiot and
 # forgot to put parens or quotes while typing and I
 # move back to fix that issue. It's a skill issue that
 # I'm not fixing. Deal with it.
-auto-pairs = false
-end-of-line-diagnostics = "hint"
-trim-final-newlines = true
-trim-trailing-whitespace = true
-
-[editor.inline-diagnostics]
-cursor-line = "error"
+enable = false
 
 [editor.inline-blame]
 show = "cursor-line"
 format = "{commit} • {date} • {author} • {title}"
 
-[editor.cursor-shape]
+[editor.cursor]
+highlight-line = true
+
+#
+# NORMAL MODE
+#
+
+[editor.cursor.shape]
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.files.save]
+trim-final-newlines = true
+trim-trailing-whitespace = true
 
 [editor.soft-wrap]
 enable = true
@@ -60,17 +70,22 @@ skip-levels = 1
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+mode.color = true
 
 [editor.file-picker]
 hidden = false
 
 [editor.lsp]
 enable = true
-auto-signature-help = false
 
-#
-# NORMAL MODE
-#
+[editor.lsp.signature-help]
+auto-trigger = false
+
+[editor.mouse]
+enable = false
+
+[editor.scroll]
+padding = 7
 
 [keys.normal]
 # Shift-l and -h to move through tabs
@@ -86,8 +101,6 @@ C-S-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 # Duplicate current line
 "C-S-d" = ["extend_to_line_bounds", "yank", "paste_after"]
 # Close the buffer
-C-q = ":buffer-close"
-C-S-q = ":buffer-close!"
 S-y = ":clipboard-yank"
 C-r = ":reload"
 F5 = ":reload"
@@ -98,8 +111,6 @@ S-right = "extend_char_right"
 S-up = "extend_line_up"
 S-down = "extend_line_down"
 # Scroll
-# C-down = "scroll_down"
-# C-up = "scroll_up"
 C-up = ["move_line_up", "scroll_up"]
 C-down = ["move_line_down", "scroll_down"]
 C-k = ["move_line_up", "scroll_up"]
@@ -114,6 +125,12 @@ X = "extend_line_above"
 F12 = ":format"
 C-h = ":toggle-option file-picker.hidden"
 C-m = ":toggle-option soft-wrap.enable"
+
+[keys.normal."["]
+b = "goto_previous_buffer"
+
+[keys.normal."]"]
+b = "goto_next_buffer"
 
 [keys.normal.space]
 "F" = "file_picker_in_current_buffer_directory"
@@ -131,6 +148,24 @@ d = "delete_selection_noyank"
 c = "change_selection_noyank"
 y = ":yank-diagnostic"
 
+[keys.select]
+"C-/" = "toggle_comments"
+S-y = ":clipboard-yank"
+S-left = "extend_char_left"
+S-right = "extend_char_right"
+S-up = "extend_line_up"
+S-down = "extend_line_down"
+tab = "trim_selections"
+X = "extend_line_above"
+ret = "extend_to_word"
+";" = ["collapse_selection", "normal_mode"]
+
+[keys.select."["]
+b = "goto_previous_buffer"
+
+[keys.select."]"]
+b = "goto_next_buffer"
+
 [keys.insert]
 C-e = ":insert-output comment-signature"
 "A-," = "unindent"
@@ -145,18 +180,6 @@ tab = "insert_tab"
 # SELECT MODE
 #
 
-[keys.select]
-"C-/" = "toggle_comments"
-S-y = ":clipboard-yank"
-S-left = "extend_char_left"
-S-right = "extend_char_right"
-S-up = "extend_line_up"
-S-down = "extend_line_down"
-tab = "trim_selections"
-X = "extend_line_above"
-ret = "extend_to_word"
-";" = ["collapse_selection", "normal_mode"]
-
 #
 # Custom Commands
 # https://mitos.computer/docs/custom-commands
@@ -164,3 +187,6 @@ ret = "extend_to_word"
 [commands]
 # Because I am really stupid when I type
 ":Wq" = [":write", ":quit"]
+
+[terminal]
+undercurl = true
